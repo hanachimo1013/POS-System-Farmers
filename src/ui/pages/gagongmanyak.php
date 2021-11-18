@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>Gagong | POS System</title>
+  <title> POS System</title>
   <?php include 'components/head_content.php' ?>
   <link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <style>
