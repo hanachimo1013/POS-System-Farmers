@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Reports</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<title>Admin Stocks</title>
+	<?php include 'components/head_content.php' ?>
 </head>
 <style>
 .poslogo{
@@ -109,7 +103,7 @@
 	height: 200px;
 }
 .card-text{
-	color:;
+	color: white;
 }
 
 #myInput {
@@ -151,6 +145,40 @@
 .fsize{
   font-size: 13px;
 }
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 .buttp{
   position: relative;
   top: 50px;
@@ -187,92 +215,148 @@
   		    Admin
   	</center>
   </div>
-  <ul class="sidebar-navigation">
+	<ul class="sidebar-navigation">
     <li class="header">Navigation</li>
     <li>
-      <a href="AdminHomeDash.html">
+      <a href="AdminHomeDash.php">
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
       </a>
     </li>
     <li>
-      <a href="AdminEmployees.html">
+      <a href="AdminEmployees.php">
         <i class="fa fa-user-circle-o" aria-hidden="true"></i> Employees
       </a>
     </li>
     <li>
-      <a href="AdminMembers.html">
+      <a href="AdminMembers.php">
         <i class="fa fa-users" aria-hidden="true"></i> Members
       </a>
     </li>
     <li>
-      <a href="AdminCategory.html">
+      <a href="AdminCategory.php">
         <i class="fa fa-server" aria-hidden="true"></i> Category
       </a>
     </li>
     <li>
-      <a href="AdminProducts.html">
+      <a href="AdminProducts.php">
         <i class="fa fa-shopping-bag" aria-hidden="true"></i> Products
       </a>
     </li>
     <li>
-      <a href="AdminStocks.html">
+      <a href="AdminStocks.php">
         <i class="fa fa-archive" aria-hidden="true"></i> Stocks
       </a>
     </li>
     <li>
-      <a href="AdminVouchers.html">
+      <a href="AdminVouchers.php">
         <i class="fa fa-tags" aria-hidden="true"></i> Vouchers
       </a>
     </li>
     <li>
-      <a href="AdminSaleReport.html">
+      <a href="AdminSaleReport.php">
         <i class="fa fa-line-chart" aria-hidden="true"></i> Sales Report
       </a>
     </li>
     <li>
-      <a href="AdminAccRecievable.html">
+      <a href="AdminAccRecievable.php">
         <i class="fa fa-credit-card" aria-hidden="true"></i> Account Recievable
       </a>
     </li>
-    <!-- End can
-    <li class="header">Another Menu</li>
-    <li>
-      <a href="#">
-        <i class="fa fa-users" aria-hidden="true"></i> Friends
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-cog" aria-hidden="true"></i> Settings
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-info-circle" aria-hidden="true"></i> Information
-      </a>
-    </li>
-	-->
   </ul>
 </div>
 
 <div class="content-container">
 <div>
   <div class="container-fluid">
-   <h2>Reports</h2>
-   <div class="card text-center">
-  <div class="card-header">
-    Report Logs
+   <h2>Stocks</h2>
+      <form>
+        <div class="form-group row">
+          &nbsp;<label for="colFormLabel" class=" col-form-label">Search:</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="colFormLabel" placeholder="">
+          </div>
+          <label for="colFormLabel" class="col-sm-1 col-form-label">P.code:</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" placeholder="">
+          </div>
+          <label for="colFormLabel" class="col-sm-1 col-form-label">Date:</label>
+          <div class="col-sm-2">
+            <input type="text" class="form-control" placeholder="">
+          </div>
+        </div>
+        <div class="form-group row">
+           &nbsp;<label for="colFormLabel" class=" col-form-label">Add Quantity:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="colFormLabel" placeholder="">
+          </div>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <label for="colFormLabel" class="col-sm-2 col-form-label">Product Description:</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" placeholder="">
+          </div>
+        </div>
+    </form>
+
+    <div class="row">
+  <div class="column">
+    <table>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>Adam</td>
+        <td>Johnson</td>
+        <td>67</td>
+      </tr>
+    </table>
   </div>
-  <div class="card-body">
-  </div>
-  <div class="card-footer text-muted">
-    © Alright Reserved
+  <div class="column">
+    <table>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Eve</td>
+        <td>Jackson</td>
+        <td>94</td>
+      </tr>
+      <tr>
+        <td>Adam</td>
+        <td>Johnson</td>
+        <td>67</td>
+      </tr>
+    </table>
   </div>
 </div>
-<center>
-  <br>
-  <button type="submit" class="btn btn-success">Print</button>
-</center>
+
+<div class="form-inline buttp">
+  <br><br><br><br>
+  <center>
+    <button type="submit" class="btn btn-success">Add Stock</button>&nbsp;
+    <button type="submit" class="btn btn-info">Update</button>&nbsp;
+    <button type="submit" class="btn btn-danger">Delete</button>&nbsp;
+    <button type="submit" class="btn btn-success">Save</button>
+  </center>
+  </div>
     <!-- Main component for a primary marketing message or call to action -->
     <!--trial
     <div class="jumbotron">

@@ -2,14 +2,7 @@
 <html>
 <head>
 	<title>Admin Category</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<?php include 'components/head_content.php' ?>
 </head>
 <style>
 .poslogo{
@@ -156,7 +149,7 @@
     width: 700px;
     margin: 30px auto;
         background: #fff;
-        padding: 20px;  
+        padding: 20px;
         box-shadow: 0 1px 1px rgba(0,0,0,.05);
     }
     .table-title {
@@ -199,7 +192,7 @@
         display: inline-block;
         margin: 0 5px;
     min-width: 24px;
-    }    
+    }
   table.table td a.add {
         color: #27C46B;
     }
@@ -217,7 +210,7 @@
       margin-right: -1px;
         position: relative;
         top: 3px;
-    }    
+    }
     table.table .form-control {
         height: 32px;
         line-height: 32px;
@@ -276,7 +269,7 @@ $(document).ready(function(){
             '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
       '<td>' + actions + '</td>' +
         '</tr>';
-      $("table").append(row);   
+      $("table").append(row);
     $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
         $('[data-toggle="tooltip"]').tooltip();
     });
@@ -296,16 +289,16 @@ $(document).ready(function(){
     if(!empty){
       input.each(function(){
         $(this).parent("td").html($(this).val());
-      });     
+      });
       $(this).parents("tr").find(".add, .edit").toggle();
       $(".add-new").removeAttr("disabled");
-    }   
+    }
     });
   // Edit row on edit button click
-  $(document).on("click", ".edit", function(){    
+  $(document).on("click", ".edit", function(){
         $(this).parents("tr").find("td:not(:last-child)").each(function(){
       $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-    });   
+    });
     $(this).parents("tr").find(".add, .edit").toggle();
     $(".add-new").attr("disabled", "disabled");
     });
@@ -350,68 +343,50 @@ $(document).ready(function(){
   <ul class="sidebar-navigation">
     <li class="header">Navigation</li>
     <li>
-      <a href="AdminHomeDash.html">
+      <a href="AdminHomeDash.php">
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
       </a>
     </li>
     <li>
-      <a href="AdminEmployees.html">
+      <a href="AdminEmployees.php">
         <i class="fa fa-user-circle-o" aria-hidden="true"></i> Employees
       </a>
     </li>
     <li>
-      <a href="AdminMembers.html">
+      <a href="AdminMembers.php">
         <i class="fa fa-users" aria-hidden="true"></i> Members
       </a>
     </li>
     <li>
-      <a href="AdminCategory.html">
+      <a href="AdminCategory.php">
         <i class="fa fa-server" aria-hidden="true"></i> Category
       </a>
     </li>
     <li>
-      <a href="AdminProducts.html">
+      <a href="AdminProducts.php">
         <i class="fa fa-shopping-bag" aria-hidden="true"></i> Products
       </a>
     </li>
     <li>
-      <a href="AdminStocks.html">
+      <a href="AdminStocks.php">
         <i class="fa fa-archive" aria-hidden="true"></i> Stocks
       </a>
     </li>
     <li>
-      <a href="AdminVouchers.html">
+      <a href="AdminVouchers.php">
         <i class="fa fa-tags" aria-hidden="true"></i> Vouchers
       </a>
     </li>
     <li>
-      <a href="AdminSaleReport.html">
+      <a href="AdminSaleReport.php">
         <i class="fa fa-line-chart" aria-hidden="true"></i> Sales Report
       </a>
     </li>
     <li>
-      <a href="AdminAccRecievable.html">
+      <a href="AdminAccRecievable.php">
         <i class="fa fa-credit-card" aria-hidden="true"></i> Account Recievable
       </a>
     </li>
-    <!-- End can
-    <li class="header">Another Menu</li>
-    <li>
-      <a href="#">
-        <i class="fa fa-users" aria-hidden="true"></i> Friends
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-cog" aria-hidden="true"></i> Settings
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-info-circle" aria-hidden="true"></i> Information
-      </a>
-    </li>
-	-->
   </ul>
 </div>
 
@@ -466,11 +441,11 @@ $(document).ready(function(){
                         <td>
                             <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
                         </td>
-                    </tr>      
+                    </tr>
                 </tbody>
             </table>
         </div>
-    </div>    
+    </div>
 
     <!-- Main component for a primary marketing message or call to action -->
     <!--trial
@@ -489,4 +464,3 @@ $(document).ready(function(){
 
 </body>
 </html>
-

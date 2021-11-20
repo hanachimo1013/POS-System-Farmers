@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>POS/SYSTEM</title>
+	<title>POS System</title>
 	<?php include 'head_content.php' ?>
 	<style>
 	.line{

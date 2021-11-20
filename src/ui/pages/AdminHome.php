@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Members</title>
+	<title>Admin Dashboard</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
@@ -111,43 +111,6 @@
 .card-text{
 	color: white;
 }
-
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 40%;
-  font-size: 12px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
-
-#myTable {
-  border-collapse: collapse;
-  width: 50%;
-  border: 1px solid #ddd;
-  font-size: 12px;
-}
-
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
-
-#myTable tr {
-  border-bottom: 1px solid #ddd;
-}
-
-#myTable tr.header, #myTable tr:hover {
-  background-color: #f1f1f1;
-}
-.divpps{
-  position: absolute;
-  left: 60%;
-  top: 20%;
-  width: 35%;
-}
 </style>
 <body>
 	<!--nav main-->
@@ -161,6 +124,12 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="#">Farmers Gate <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -183,47 +152,37 @@
   <ul class="sidebar-navigation">
     <li class="header">Navigation</li>
     <li>
-      <a href="AdminHomeDash.html">
+      <a href="#">
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
       </a>
     </li>
     <li>
-      <a href="AdminEmployees.html">
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i> Employees
-      </a>
-    </li>
-    <li>
-      <a href="AdminMember.html">
+      <a href="#">
         <i class="fa fa-users" aria-hidden="true"></i> Members
       </a>
     </li>
     <li>
-      <a href="AdminCategory.html">
-        <i class="fa fa-server" aria-hidden="true"></i> Category
+      <a href="#">
+      	<i class="fa fa-shopping-bag" aria-hidden="true"></i>Products
       </a>
     </li>
     <li>
-      <a href="AdminProducts.html">
-        <i class="fa fa-shopping-bag" aria-hidden="true"></i> Products
+      <a href="#">
+        <i class="fa fa-cart-plus" aria-hidden="true"></i> Sales
       </a>
     </li>
     <li>
-      <a href="AdminStocks.html">
-        <i class="fa fa-archive" aria-hidden="true"></i> Stocks
-      </a>
-    </li>
-    <li>
-      <a href="AdminVouchers.html">
+      <a href="#">
         <i class="fa fa-tags" aria-hidden="true"></i> Vouchers
       </a>
     </li>
     <li>
-      <a href="AdminSaleReport.html">
+      <a href="#">
         <i class="fa fa-line-chart" aria-hidden="true"></i> Sales Report
       </a>
     </li>
     <li>
-      <a href="AdminAccRecievable.html">
+      <a href="#">
         <i class="fa fa-credit-card" aria-hidden="true"></i> Account Recievable
       </a>
     </li>
@@ -249,145 +208,80 @@
 </div>
 
 <div class="content-container">
-<div>
+
   <div class="container-fluid">
-   <h2>Members</h2>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-<button type="submit" class="btn btn-success">Search</button>
-<table id="myTable">
-  <tr class="header">
-    <th style="width:20%;">ID</th>
-    <th style="width:20%;">Lastname</th>
-    <th style="width:20%;">Firstname</th>
-    <th style="width:20%;">Phone</th>
-    <th style="width:15%;">Address</th>
-  </tr>
-  <tr>
-    <td>0001</td>
-    <td>Germany</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0002</td>
-    <td>Sweden</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0003</td>
-    <td>UK</td>
-    <td>jake</td>
-    <td>Manyak</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0004</td>
-    <td>Germany</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0005</td>
-    <td>Canada</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>00006</td>
-    <td>Italy</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>00007</td>
-    <td>UK</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0008</td>
-    <td>France</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+  	<!--Chart-->
+	<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="card-header">
+                    <h3>Bar Series</h3>
+                </div>
+                <div class="card-block">
+                    <div id="chart1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="card-header">
+                    <h3>Multiple Bar Series</h3>
+                </div>
+                <div id="chart2" class="card-block">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
+<!-- you need to include the shieldui css and js assets in order for the charts to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        var data1 = [12, 3, 4, 2, 12, 3, 4, 17, 22, 34, 54, 67];
+        var data2 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
+        var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
+
+        $("#chart1").shieldChart({
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisY: {
+                title: {
+                    text: "Break-Down for selected quarter"
+                }
+            },
+            dataSeries: [{
+                seriesType: "bar",
+                data: data1
+            }]
+        });
+
+        $("#chart2").shieldChart({
+            exportOptions: {
+                image: false,
+                print: false
+            },
+            axisY: {
+                title: {
+                    text: "Break-Down for selected quarter"
+                }
+            },
+            dataSeries: [{
+                seriesType: "bar",
+                data: data2
+            }, {
+                seriesType: "bar",
+                data: data3
+            }]
+        });
+    });
 </script>
-</div>
-<div class="divpps">
-  <form>
-  <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">ID:</label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticId" value="">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Firstname:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Fname">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Lastname:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Lname">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">M.I:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Middle Initial">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Address:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Address">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Phone:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Number">
-    </div>
-  </div>
-</form>
-  <div class="form-inline">
-    <button type="submit" class="btn btn-success">Create</button>&nbsp;
-    <button type="submit" class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" class="btn btn-danger">DeleteDB</button>
-  </div>
-</div>
-
+  	<!--Chart end-->
 
     <!-- Main component for a primary marketing message or call to action -->
     <!--trial
@@ -400,6 +294,42 @@ function myFunction() {
       </p>
     </div>
     -->
+    <!--Admin Button-->
+    <br>
+    <br>
+    <div class="card-columns">
+  <div class="card bg-primary">
+    <div class="card-body text-center">
+      <p class="card-text"><i class="fa fa-users" aria-hidden="true"></i> Members</p>
+    </div>
+  </div>
+  <div class="card bg-warning">
+    <div class="card-body text-center">
+      <p class="card-text"><i class="fa fa-tags" aria-hidden="true"></i> Vouchers</p>
+    </div>
+  </div>
+  <div class="card bg-success">
+    <div class="card-body text-center">
+      <p class="card-text"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Products</p>
+    </div>
+  </div>
+  <div class="card bg-danger">
+    <div class="card-body text-center">
+      <p class="card-text"><i class="fa fa-line-chart" aria-hidden="true"></i> Sales Report</p>
+    </div>
+  </div>
+  <div class="card bg-dark">
+    <div class="card-body text-center">
+      <p class="card-text"><i class="fa fa-cart-plus" aria-hidden="true"></i> Sales</p>
+    </div>
+  </div>
+  <div class="card bg-info">
+    <div class="card-body text-center">
+      <p class="card-text"><i class="fa fa-credit-card" aria-hidden="true"></i> Account Recievable</p>
+    </div>
+  </div>
+</div>
+    <!--Admin Button End-->
 
   </div>
 </div>

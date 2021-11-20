@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Vouchers</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<title>Admin Products</title>
+	<?php include 'components/head_content.php' ?>
 </head>
 <style>
 .poslogo{
@@ -109,14 +103,14 @@
 	height: 200px;
 }
 .card-text{
-	color:;
+	color: white;
 }
 
 #myInput {
   background-image: url('css/searchicon.png');
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  width: 50%;
+  width: 40%;
   font-size: 12px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
@@ -151,10 +145,6 @@
 .fsize{
   font-size: 13px;
 }
-.buttp{
-  position: relative;
-  top: 50px;
-}
 </style>
 <body>
 	<!--nav main-->
@@ -187,100 +177,196 @@
   		    Admin
   	</center>
   </div>
-  <ul class="sidebar-navigation">
+	<ul class="sidebar-navigation">
     <li class="header">Navigation</li>
     <li>
-      <a href="AdminHomeDash.html">
+      <a href="AdminHomeDash.php">
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
       </a>
     </li>
     <li>
-      <a href="AdminEmployees.html">
+      <a href="AdminEmployees.php">
         <i class="fa fa-user-circle-o" aria-hidden="true"></i> Employees
       </a>
     </li>
     <li>
-      <a href="AdminMembers.html">
+      <a href="AdminMembers.php">
         <i class="fa fa-users" aria-hidden="true"></i> Members
       </a>
     </li>
     <li>
-      <a href="AdminCategory.html">
+      <a href="AdminCategory.php">
         <i class="fa fa-server" aria-hidden="true"></i> Category
       </a>
     </li>
     <li>
-      <a href="AdminProducts.html">
+      <a href="AdminProducts.php">
         <i class="fa fa-shopping-bag" aria-hidden="true"></i> Products
       </a>
     </li>
     <li>
-      <a href="AdminStocks.html">
+      <a href="AdminStocks.php">
         <i class="fa fa-archive" aria-hidden="true"></i> Stocks
       </a>
     </li>
     <li>
-      <a href="AdminVoucher.html">
+      <a href="AdminVouchers.php">
         <i class="fa fa-tags" aria-hidden="true"></i> Vouchers
       </a>
     </li>
     <li>
-      <a href="AdminSaleReport.html">
+      <a href="AdminSaleReport.php">
         <i class="fa fa-line-chart" aria-hidden="true"></i> Sales Report
       </a>
     </li>
     <li>
-      <a href="AdminAccRecievable.html">
+      <a href="AdminAccRecievable.php">
         <i class="fa fa-credit-card" aria-hidden="true"></i> Account Recievable
       </a>
     </li>
-    <!-- End can
-    <li class="header">Another Menu</li>
-    <li>
-      <a href="#">
-        <i class="fa fa-users" aria-hidden="true"></i> Friends
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-cog" aria-hidden="true"></i> Settings
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-info-circle" aria-hidden="true"></i> Information
-      </a>
-    </li>
-	-->
   </ul>
 </div>
 
 <div class="content-container">
 <div>
   <div class="container-fluid">
-   <h2>Vouchers</h2>
-   <div class="card text-center">
-  <div class="card-header">
-    Featured
+   <h2>Products</h2>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<button type="submit" class="btn btn-success">Search</button>
+<table id="myTable">
+  <tr class="header">
+    <th style="width:20%;">ID</th>
+    <th style="width:20%;">Name</th>
+    <th style="width:20%;">Category</th>
+    <th style="width:20%;">Price</th>
+    <th style="width:15%;">Reoderlvl</th>
+  </tr>
+  <tr>
+    <td>0001</td>
+    <td>Germany</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0002</td>
+    <td>Sweden</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0003</td>
+    <td>UK</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0004</td>
+    <td>Germany</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0005</td>
+    <td>Canada</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>00006</td>
+    <td>Italy</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>00007</td>
+    <td>UK</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>0008</td>
+    <td>France</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+</div>
+<div class="divpps">
+  <form>
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label fsize">Product Code:</label>
+    <div class="col-sm-8">
+      <input type="text" readonly class="form-control-plaintext" id="staticId" value="">
+    </div>
   </div>
-  <div class="card-body">
-    <h5 class="card-title">Voucher Coupon</h5>
-    <p class="card-text"><b>20% OFF YOUR PURCHASE</b></p>
-    <p class="card-text"><b>35% OFF For Registered Farmers</b></p>
-    <a href="#" class="btn btn-primary">Generate Code</a>
-    <br><br>
-    <center>
-    <div class="col-sm-2">
-      <input type="text" class="form-control" value="XXXXX" readonly>
-     </div>
-   </center>
-    <br><br>
-    <a href="#" class="btn btn-primary">Print</a>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Description:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" placeholder="Product Description">
+    </div>
   </div>
-  <div class="card-footer text-muted">
-    © Alright Reserved
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Category:</label>
+    <div class="col-sm-8">
+      <select class="custom-select">
+        <option selected>Open this select Category</option>
+        <option value="1">Pataba</option>
+        <option value="2">Seeds</option>
+        <option value="3">Tools</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Unit Price:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" placeholder="Unit Price">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Re-order level:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" placeholder="Re-order lvl">
+    </div>
+  </div>
+</form>
+  <div class="form-inline">
+    <button type="submit" class="btn btn-success">Create</button>&nbsp;
+    <button type="submit" class="btn btn-info">Update</button>&nbsp;
+    <button type="submit" class="btn btn-danger">Delete</button>&nbsp;
+    <button type="submit" class="btn btn-danger">DeleteDB</button>
   </div>
 </div>
+
+
     <!-- Main component for a primary marketing message or call to action -->
     <!--trial
     <div class="jumbotron">

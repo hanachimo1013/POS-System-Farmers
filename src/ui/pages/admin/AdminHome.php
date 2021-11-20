@@ -2,13 +2,7 @@
 <html>
 <head>
 	<title>Admin Dashboard</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<?php include 'components/head_content.php' ?>
 </head>
 <style>
 .poslogo{
@@ -125,6 +119,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Farmers Gate <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <button class="btn btn-success my-2 my-sm-0" type="submit">
@@ -143,71 +143,53 @@
   		    Admin
   	</center>
   </div>
-  <ul class="sidebar-navigation">
+	<ul class="sidebar-navigation">
     <li class="header">Navigation</li>
     <li>
-      <a href="AdminHomeDash.html">
+      <a href="AdminHomeDash.php">
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
       </a>
     </li>
     <li>
-      <a href="AdminEmployees.html">
+      <a href="AdminEmployees.php">
         <i class="fa fa-user-circle-o" aria-hidden="true"></i> Employees
       </a>
     </li>
     <li>
-      <a href="ADminMembers.html">
+      <a href="AdminMembers.php">
         <i class="fa fa-users" aria-hidden="true"></i> Members
       </a>
     </li>
     <li>
-      <a href="adminCategory.html">
+      <a href="AdminCategory.php">
         <i class="fa fa-server" aria-hidden="true"></i> Category
       </a>
     </li>
     <li>
-      <a href="AdminProducts.html">
-      	<i class="fa fa-shopping-bag" aria-hidden="true"></i> Products
+      <a href="AdminProducts.php">
+        <i class="fa fa-shopping-bag" aria-hidden="true"></i> Products
       </a>
     </li>
     <li>
-      <a href="AdminStocks.html">
+      <a href="AdminStocks.php">
         <i class="fa fa-archive" aria-hidden="true"></i> Stocks
       </a>
     </li>
     <li>
-      <a href="AdminVoucher.html">
+      <a href="AdminVouchers.php">
         <i class="fa fa-tags" aria-hidden="true"></i> Vouchers
       </a>
     </li>
     <li>
-      <a href="AdminSaleReport.html">
+      <a href="AdminSaleReport.php">
         <i class="fa fa-line-chart" aria-hidden="true"></i> Sales Report
       </a>
     </li>
     <li>
-      <a href="AdminAccRecievable.html">
+      <a href="AdminAccRecievable.php">
         <i class="fa fa-credit-card" aria-hidden="true"></i> Account Recievable
       </a>
     </li>
-    <!-- End can
-    <li class="header">Another Menu</li>
-    <li>
-      <a href="#">
-        <i class="fa fa-users" aria-hidden="true"></i> Friends
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-cog" aria-hidden="true"></i> Settings
-      </a>
-    </li>
-    <li>
-      <a href="#">
-        <i class="fa fa-info-circle" aria-hidden="true"></i> Information
-      </a>
-    </li>
-	-->
   </ul>
 </div>
 
@@ -236,7 +218,7 @@
                 </div>
             </div>
         </div>
-    </div>   
+    </div>
 </div>
 
 <!-- you need to include the shieldui css and js assets in order for the charts to work -->
@@ -248,7 +230,7 @@
         var data1 = [12, 3, 4, 2, 12, 3, 4, 17, 22, 34, 54, 67];
         var data2 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
         var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
-            
+
         $("#chart1").shieldChart({
             exportOptions: {
                 image: false,
@@ -286,7 +268,7 @@
     });
 </script>
   	<!--Chart end-->
-  	
+
     <!-- Main component for a primary marketing message or call to action -->
     <!--trial
     <div class="jumbotron">
@@ -304,7 +286,7 @@
     <div class="card-columns">
   <div class="card bg-primary">
     <div class="card-body text-center">
-      <p class="card-text"><i class="fa fa-users" aria-hidden="true"></i> Employees</p>
+      <p class="card-text"><i class="fa fa-users" aria-hidden="true"></i> Members</p>
     </div>
   </div>
   <div class="card bg-warning">
@@ -314,7 +296,7 @@
   </div>
   <div class="card bg-success">
     <div class="card-body text-center">
-      <p class="card-text"><i class="fa fa-users" aria-hidden="true"></i> Members</p>
+      <p class="card-text"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Products</p>
     </div>
   </div>
   <div class="card bg-danger">
@@ -324,7 +306,7 @@
   </div>
   <div class="card bg-dark">
     <div class="card-body text-center">
-      <p class="card-text"><i class="fa fa-shopping-bag" aria-hidden="true"></i> Products</p>
+      <p class="card-text"><i class="fa fa-cart-plus" aria-hidden="true"></i> Sales</p>
     </div>
   </div>
   <div class="card bg-info">
