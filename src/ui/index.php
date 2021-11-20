@@ -8,7 +8,7 @@ $app = new \Slim\App();
 
 //Front-End UI
 $app->get('/', function(Request $req, Response $res, $args = []){
-  include 'pages\home_login.php';
+  include 'pages\EmployeeHomeDash.php';
   return $res;
 });
 
