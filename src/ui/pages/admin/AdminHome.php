@@ -2,7 +2,13 @@
 <html>
 <head>
 	<title>Admin Dashboard</title>
-	<?php include 'components/head_content.php' ?>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <style>
 .poslogo{
@@ -143,53 +149,61 @@
   		    Admin
   	</center>
   </div>
-	<ul class="sidebar-navigation">
+  <ul class="sidebar-navigation">
     <li class="header">Navigation</li>
     <li>
-      <a href="AdminHomeDash.php">
+      <a href="#">
         <i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard
       </a>
     </li>
     <li>
-      <a href="AdminEmployees.php">
-        <i class="fa fa-user-circle-o" aria-hidden="true"></i> Employees
-      </a>
-    </li>
-    <li>
-      <a href="AdminMembers.php">
+      <a href="#">
         <i class="fa fa-users" aria-hidden="true"></i> Members
       </a>
     </li>
     <li>
-      <a href="AdminCategory.php">
-        <i class="fa fa-server" aria-hidden="true"></i> Category
+      <a href="#">
+      	<i class="fa fa-shopping-bag" aria-hidden="true"></i>Products
       </a>
     </li>
     <li>
-      <a href="AdminProducts.php">
-        <i class="fa fa-shopping-bag" aria-hidden="true"></i> Products
+      <a href="#">
+        <i class="fa fa-cart-plus" aria-hidden="true"></i> Sales
       </a>
     </li>
     <li>
-      <a href="AdminStocks.php">
-        <i class="fa fa-archive" aria-hidden="true"></i> Stocks
-      </a>
-    </li>
-    <li>
-      <a href="AdminVouchers.php">
+      <a href="#">
         <i class="fa fa-tags" aria-hidden="true"></i> Vouchers
       </a>
     </li>
     <li>
-      <a href="AdminSaleReport.php">
+      <a href="#">
         <i class="fa fa-line-chart" aria-hidden="true"></i> Sales Report
       </a>
     </li>
     <li>
-      <a href="AdminAccRecievable.php">
+      <a href="#">
         <i class="fa fa-credit-card" aria-hidden="true"></i> Account Recievable
       </a>
     </li>
+    <!-- End can
+    <li class="header">Another Menu</li>
+    <li>
+      <a href="#">
+        <i class="fa fa-users" aria-hidden="true"></i> Friends
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-cog" aria-hidden="true"></i> Settings
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+      </a>
+    </li>
+	-->
   </ul>
 </div>
 
