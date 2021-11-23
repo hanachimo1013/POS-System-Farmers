@@ -13,7 +13,7 @@ $app->get('/', function(Request $req, Response $res, $args = []){
 });
 
 $app->get('/voting_status', function(Request $req, Response $res, $args = []){
-  include 'pages\home_voting_sts.php';
+  include '#';
   return $res;
 });
 
