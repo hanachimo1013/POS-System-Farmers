@@ -6,7 +6,7 @@ Siyempre, lagyan lang yan ng tamang INSPIRATION para maganda
 ```
 git clone ScriptycaLiSA/POS-System-Farmers
 ```
-or
+or in `Github CLI` :
 ```
 gh repo clone ScriptycaLiSA/POS-System-Farmers
 ```
