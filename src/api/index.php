@@ -12,9 +12,16 @@ $app->get('/', function(Request $req, Response $res, $args = []){
   return $res;
 });
 
-$app->get('/voting_status', function(Request $req, Response $res, $args = []){
+$app->get('/admin', function(Request $req, Response $res, $args = []){
   include '#';
   return $res;
 });
+
+$app->get('/user', function(Request $req, Response $res, $args = []){
+  include '#';
+  return $res;
+});
+
+// API Methods
 
 $app->run();
