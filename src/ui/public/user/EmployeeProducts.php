@@ -264,31 +264,31 @@ function myFunction() {
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label fsize">Product Code:</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext" id="staticId" value="" readonly>
+      <input type="text" class="form-control" id="staticId" placeholder="Product Code" >
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Name:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Product Name" readonly>
+      <input type="text" class="form-control" placeholder="Product Name" >
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Category:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Product Category" readonly>
+      <input type="text" class="form-control" placeholder="Product Category">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Unit Price:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Unit Price" readonly>
+      <input type="text" class="form-control" placeholder="Unit Price">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Re-order level:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Re-order lvl" readonly="">
+      <input type="text" class="form-control" placeholder="Re-order lvl" >
     </div>
   </div>
 </form>
