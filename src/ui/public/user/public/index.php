@@ -8,7 +8,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	$app = new \Slim\App;
 
 
-	$app->get('/getName/{lname}/{fname}/{mname}/{uname}/{pword}/', function (Request $request, Response
+	$app->get('/getName/{name}/{category}/{unit}/{reorder}/', function (Request $request, Response
 	$response, array $args) {
 
 	//endpoint get greeting
@@ -18,18 +18,17 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	$app->post('/postName', function (Request $request, Response $response, array $args)
 	{
 	$data=json_decode($request->getBody());
-		$lname =$data->lname ;
-		$fname =$data->fname ;
-		$mname =$data->mname ;
-		$uname =$data->uname ;
-		$pword =$data->pword ;
+		$name =$data->name ;
+		$category =$data->category ;
+		$unit =$data->unit ;
+		$reorder =$data->reorder ;
 
 
 		//Database
 			$servername = "localhost";
 			$username = "root";
 			$password = "";
-			$dbname = "api";
+			$dbname = "pos";
 
 			try {
 			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -37,8 +36,8 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		// set the PDO error mode to exception
 		$conn->setAttribute(PDO::ATTR_ERRMODE,
 		PDO::ERRMODE_EXCEPTION);
-		$sql = "INSERT INTO names (lname, mname, fname, uname, pword)
-		VALUES ('". $lname ."','". $mname ."','". $fname ."','". $uname ."','". $pword ."')";
+		$sql = "INSERT INTO product (name, unit, category, reorder)
+		VALUES ('". $name ."','". $category ."','". $unit ."','". $reorder ."')";
 
 		// use exec() because no results are returned
 		$conn->exec($sql);
@@ -49,14 +48,14 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		$conn = null;
 });
 
-	//endpoint post print
-	$app->post('/postPrint', function (Request $request, Response $response, array $args) {
+	//endpoint post prin
+	$app->post('/employeepostPrint', function (Request $request, Response $response, array $args) {
 
 	//Database
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "api";
+	$dbname = "pos";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -65,12 +64,12 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 		}
-		$sql = "SELECT * FROM names";
+		$sql = "SELECT * FROM product";
 		$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$data=array();
 			while($row = $result->fetch_assoc()) {
-			array_push($data,array("id"=>$row["id"] ,"fname"=>$row["fname"] ,"lname"=>$row["lname"],"mname"=>$row["mname"],"uname"=>$row["uname"],"pword"=>$row["pword"]));
+			array_push($data,array("product"=>$row["product"] ,"name"=>$row["name"] ,"category"=>$row["category"],"unit"=>$row["unit"], "reorder"=>$row["reorder"]));
 			}
 
 		$data_body=array("status"=>"success","data"=>$data);
@@ -84,16 +83,16 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	});
 
 	//endpoint search student
-	$app->post('/searchStudent', function (Request $request, Response $response, array
+	$app->post('/employeesearchproduct', function (Request $request, Response $response, array
 	$args) {
 	$data=json_decode($request->getBody());
-	$id =$data->id;
+	$product =$data->product;
 
 	//Database
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "api";
+		$dbname = "pos";
 
 	// Create connection
 		$conn = new mysqli($servername, $username, $password, $dbname);
@@ -102,12 +101,12 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 			}
-			$sql = "SELECT * FROM names where id='". $id ."'";
+			$sql = "SELECT * FROM product where product='". $product ."'";
 			$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 				$data=array();
 					while($row = $result->fetch_assoc()) {
-					array_push($data,array("id"=>$row["id"] ,"fname"=>$row["fname"] ,"lname"=>$row["lname"], "mname"=>$row["mname"], "uname"=>$row["uname"], "pword"=>$row["pword"]));
+					array_push($data,array("product"=>$row["product"] ,"name"=>$row["name"] ,"category"=>$row["category"], "unit"=>$row["unit"], "reorder"=>$row["reorder"]));
 					}
 					$data_body=array("status"=>"success","data"=>$data);
 					$response->getBody()->write(json_encode($data_body));
@@ -118,27 +117,26 @@ use \Psr\Http\Message\ResponseInterface as Response;
 				});
 
 	//endpoint update student
-		$app->post('/updateStudent', function (Request $request, Response $response, array $args) {
+		$app->post('/employeeupdateproduct', function (Request $request, Response $response, array $args) {
 		$data=json_decode($request->getBody());
-		$id =$data->id ;
-		$lname =$data->lname ;
-		$fname =$data->fname ;
-		$mname =$data->mname ;
-		$uname =$data->uname ;
-		$pword =$data->pword ;
+		$product =$data->product ;
+		$name =$data->name ;
+		$category =$data->category ;
+		$unit =$data->unit ;
+		$reorder =$data->reorder ;
 
 	//Database
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "api";
+		$dbname = "pos";
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
 
 		// set the PDO error mode to exception
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "UPDATE names set fname='". $fname ."', lname='". $lname ."', mname='". $mname ."', uname='". $uname ."', pword='". $pword ."' where id='". $id ."'";
+			$sql = "UPDATE product set name='". $name ."', category='". $category ."', unit='". $unit ."', reorder='". $reorder ."' where product='". $product ."'";
 
 	   // use exec() because no results are returned
 			$conn->exec($sql);
@@ -152,16 +150,16 @@ use \Psr\Http\Message\ResponseInterface as Response;
 });
 
 	//endpoint delete student
-		$app->post('/deleteStudent', function (Request $request, Response $response, array
+		$app->post('/employeedeleteproduct', function (Request $request, Response $response, array
 		$args) {
 		$data=json_decode($request->getBody());
-		$id =$data->id;
+		$product =$data->product;
 
 		//Database
 		$servername = "localhost";
 		$username = "root";
 		$password = "";
-		$dbname = "api";
+		$dbname = "pos";
 
 			// Create connection
 			$conn = new mysqli($servername, $username, $password, $dbname);
@@ -170,7 +168,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 			if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 			}
-			$sql = "DELETE FROM names where id='". $id ."'";
+			$sql = "DELETE FROM product where product='". $product ."'";
 			if ($conn->query($sql) === TRUE) {
 				$response->getBody()->write(json_encode(array("status"=>"success","data"=>null)));
 			}

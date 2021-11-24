@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Employee Products</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="script1.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -105,6 +107,12 @@
 .card-text{
 	color: white;
 }
+.crud{
+	position: absolute;
+  left: 59%;
+  top: 64%;
+  width: 35%;
+}
 #myInput {
   background-image: url('css/searchicon.png');
   background-position: 10px 10px;
@@ -137,7 +145,7 @@
 }
 .divpps{
   position: absolute;
-  left: 60%;
+  left: 59%;
   top: 20%;
   width: 35%;
 }
@@ -226,49 +234,57 @@
   <div class="container-fluid">
      <h2>Products</h2>
 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for product code.." title="Type in a name">
-<button type="submit" class="btn btn-success">Search</button>
-<table id="myTable">
-  <tr class="header">
-    <th style="width:20%;">Product CODE</th>
-    <th style="width:20%;">Product Name</th>
-    <th style="width:20%;">Category</th>
-    <th style="width:20%;">Price</th>
-    <th style="width:15%;">Reoderlvl</th>
-  </tr>
+<button type="submit" class="btn btn-success" id="search" >Search</button>
+<div class="crud">
+<button type="submit" class="btn btn-success" id="save" style="background-color:green;" >Save</button>
+<button type="submit" class="btn btn-success" id="delete" style="background-color:red;" >Delete</button>
+<button type="submit" class="btn btn-success" id="update" style="background-color:grey;" >Update</button>
+<button type="submit" class="btn btn-success" id="display" style="background-color:;" >Display</button>
+</div>
 
+<table id="myTable">
+ </thead><tr class="header">
+		<td style="width:20%;">Product CODE</td>
+		<td style="width:20%;">Product Name</td>
+		<td style="width:20%;">Category</td>
+		<td style="width:20%;">Price</td>
+		<td style="width:15%;">Reoderlvl</td>
+	</tr></thead>
+	<tbody id="data">
+</tbody>
 </table>
 
-</div>
+	</div>
 <div class="divpps">
   <form>
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label fsize">Product Code:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="staticId" placeholder="Product Code" >
+      <input type="text" class="form-control" id="product" placeholder="Product Code" >
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Name:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Product Name" >
+      <input type="text" class="form-control" id="name" placeholder="Product Name" >
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Category:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Product Category">
+      <input type="text" class="form-control" id="category" placeholder="Product Category">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Unit Price:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Unit Price">
+      <input type="text" class="form-control" id="unit" placeholder="Unit Price">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Re-order level:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Re-order lvl" >
+      <input type="text" class="form-control" id="reorder" placeholder="Re-order lvl" >
     </div>
   </div>
 </form>
@@ -288,6 +304,5 @@
 
   </div>
 </div>
-
 </body>
 </html>
