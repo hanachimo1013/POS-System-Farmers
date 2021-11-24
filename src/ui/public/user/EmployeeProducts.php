@@ -229,68 +229,13 @@
 <button type="submit" class="btn btn-success">Search</button>
 <table id="myTable">
   <tr class="header">
-    <th style="width:20%;">ID</th>
-    <th style="width:20%;">Name</th>
+    <th style="width:20%;">Product CODE</th>
+    <th style="width:20%;">Product Name</th>
     <th style="width:20%;">Category</th>
     <th style="width:20%;">Price</th>
     <th style="width:15%;">Reoderlvl</th>
   </tr>
-  <tr>
-    <td>0001</td>
-    <td>Germany</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0002</td>
-    <td>Sweden</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0003</td>
-    <td>UK</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0004</td>
-    <td>Germany</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0005</td>
-    <td>Canada</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>00006</td>
-    <td>Italy</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>00007</td>
-    <td>UK</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0008</td>
-    <td>France</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+
 </table>
 
 <script>
@@ -323,9 +268,9 @@ function myFunction() {
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Description:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Name:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Product Description" readonly>
+      <input type="text" class="form-control" placeholder="Product Name" readonly>
     </div>
   </div>
   <div class="form-group row">
