@@ -340,39 +340,39 @@ function myFunction() {
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">M.I:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Middle Initial">
+      <input type="text" class="form-control" name="Mini" id="Mini" placeholder="Middle Initial">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Address:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Address">
+      <input type="text" class="form-control" name="Address" id="Address" placeholder="Address">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Phone:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Number">
+      <input type="text" class="form-control" name="Pnum" id="Pnum" placeholder="Number">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Username:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Username">
+      <input type="text" class="form-control" name="Uname" id="Uname" placeholder="Username">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Password:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Password">
+      <input type="text" class="form-control" name="Pword" id="Pword" placeholder="Password">
     </div>
   </div>
 </form>
   <div class="form-inline">
-    <button type="submit" class="btn btn-success">Create</button>&nbsp;
-    <button type="submit" class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" class="btn btn-danger">DeleteDB</button>
+    <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
+    <button type="submit" id="update"class="btn btn-info">Update</button>&nbsp;
+    <button type="submit" id="delete"class="btn btn-danger">Delete</button>&nbsp;
+    <button type="submit" id="deleteDB"class="btn btn-danger">DeleteDB</button>
   </div>
 </div>
 
