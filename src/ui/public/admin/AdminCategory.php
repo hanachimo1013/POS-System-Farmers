@@ -231,7 +231,7 @@
 <div>
   <div class="container-fluid">
    <h2>Category</h2>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 <button type="submit" class="btn btn-success">Search</button>
 <table id="myTable">
   <tr class="header">
@@ -325,7 +325,7 @@ function myFunction() {
     <label>Category Information</label>
     <br><br>
     <label for="comment"><b>Category Description:</b></label>
-    <textarea class="form-control" rows="5" id="comment"></textarea>
+    <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
   </div>
   <div class="form-inline">
     <button type="submit" class="btn btn-success">Create</button>&nbsp;

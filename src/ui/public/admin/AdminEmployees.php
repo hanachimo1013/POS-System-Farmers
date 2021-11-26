@@ -328,13 +328,13 @@ function myFunction() {
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Firstname:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Fname">
+      <input type="text" class="form-control" name="Fname" id="Fname"placeholder="Fname">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Lastname:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Lname">
+      <input type="text" class="form-control"  name="Lname" id="Lname" placeholder="Lname">
     </div>
   </div>
   <div class="form-group row">
