@@ -231,8 +231,8 @@
 <div>
   <div class="container-fluid">
    <h2>Products</h2>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-<button type="submit" class="btn btn-success">Search</button>
+<input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<button type="submit"  class="btn btn-success">Search</button>
 <table id="myTable">
   <tr class="header">
     <th style="width:20%;">ID</th>
