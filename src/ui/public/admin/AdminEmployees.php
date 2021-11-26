@@ -370,9 +370,9 @@ function myFunction() {
 </form>
   <div class="form-inline">
     <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
-    <button type="submit" id="update"class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" id="delete"class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" id="deleteDB"class="btn btn-danger">DeleteDB</button>
+    <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
+    <button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
+    <button type="submit" id="deleteDB" class="btn btn-danger">DeleteDB</button>
   </div>
 </div>
 

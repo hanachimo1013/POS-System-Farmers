@@ -331,11 +331,11 @@ function myFunction() {
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Description:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Product Description">
+      <input type="text" class="form-control" id="proDes" name="proDes" placeholder="Product Description">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Category:</label>
+    <label for="inputPassword" id="Category" name="Category" class="col-sm-2 col-form-label fsize">Category:</label>
     <div class="col-sm-8">
       <select class="custom-select">
         <option selected>Open this select Category</option>
@@ -346,7 +346,7 @@ function myFunction() {
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Unit Price:</label>
+    <label for="inputPassword" id="Uprice" name="Uprice" class="col-sm-2 col-form-label fsize">Unit Price:</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" placeholder="Unit Price">
     </div>
@@ -354,15 +354,15 @@ function myFunction() {
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Re-order level:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Re-order lvl">
+      <input type="text" id="reorder" name="reorder" class="form-control" placeholder="Re-order lvl">
     </div>
   </div>
 </form>
   <div class="form-inline">
-    <button type="submit" class="btn btn-success">Create</button>&nbsp;
-    <button type="submit" class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" class="btn btn-danger">DeleteDB</button>
+    <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
+    <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
+    <button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
+    <button type="submit" id="deleteDB" class="btn btn-danger">DeleteDB</button>
   </div>
 </div>
 

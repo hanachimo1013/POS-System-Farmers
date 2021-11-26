@@ -156,7 +156,7 @@
   margin-left:-5px;
   margin-right:-5px;
 }
-  
+
 .column {
   float: left;
   width: 50%;
@@ -297,26 +297,26 @@ tr:nth-child(even) {
         <div class="form-group row">
           &nbsp;<label for="colFormLabel" class=" col-form-label">Search:</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="colFormLabel" placeholder="">
+            <input type="text"id="myInput" name="myInput" class="form-control" id="colFormLabel" placeholder="">
           </div>
-          <button type="submit" class="btn btn-success">Search</button>&nbsp; &nbsp;
+          <button type="submit" id="search" class="btn btn-success">Search</button>&nbsp; &nbsp;
           &nbsp; &nbsp;
-          <label for="colFormLabel" class="col-sm-1 col-form-label">P.code:</label>
+          <label for="colFormLabel" id="Pcode" name="Pcode" class="col-sm-1 col-form-label">P.code:</label>
           <div class="col-sm-2">
             <input type="text" class="form-control" placeholder="">
           </div>
-          <label for="colFormLabel" class="col-sm-1 col-form-label">Date:</label>
+          <label for="colFormLabel" id="date" name="date" class="col-sm-1 col-form-label">Date:</label>
           <div class="col-sm-2">
             <input type="text" class="form-control" placeholder="">
           </div>
         </div>
         <div class="form-group row">
-           &nbsp;<label for="colFormLabel" class=" col-form-label">Add Quantity:</label>
+           &nbsp;<label for="colFormLabel" id="Aquan" name="Aquan" class=" col-form-label">Add Quantity:</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" id="colFormLabel" placeholder="">
           </div>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <label for="colFormLabel" class="col-sm-2 col-form-label">Product Description:</label>
+          <label for="colFormLabel" id="proDes" name="proDes" class="col-sm-2 col-form-label">Product Description:</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" placeholder="">
           </div>
@@ -377,10 +377,10 @@ tr:nth-child(even) {
 <div class="form-inline buttp">
   <br><br><br><br>
   <center>
-    <button type="submit" class="btn btn-success">Add Stock</button>&nbsp;
-    <button type="submit" class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" class="btn btn-success">Save</button>
+    <button type="submit" id="addSto" class="btn btn-success">Add Stock</button>&nbsp;
+    <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
+    <button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
+    <button type="submit" id="save" class="btn btn-success">Save</button>
   </center>
   </div>
     <!-- Main component for a primary marketing message or call to action -->

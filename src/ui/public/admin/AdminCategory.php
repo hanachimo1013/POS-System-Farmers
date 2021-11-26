@@ -232,7 +232,7 @@
   <div class="container-fluid">
    <h2>Category</h2>
 <input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-<button type="submit" class="btn btn-success">Search</button>
+<button type="submit" id="search" class="btn btn-success">Search</button>
 <table id="myTable">
   <tr class="header">
     <th style="width:20%;">Category</th>
@@ -328,10 +328,10 @@ function myFunction() {
     <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
   </div>
   <div class="form-inline">
-    <button type="submit" class="btn btn-success">Create</button>&nbsp;
-    <button type="submit" class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" class="btn btn-danger">DeleteDB</button>
+    <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
+    <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
+    <button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
+    <button type="submit" id="deleteDB" class="btn btn-danger">DeleteDB</button>
   </div>
 </div>
 

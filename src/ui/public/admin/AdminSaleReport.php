@@ -247,7 +247,7 @@
 </div>
 <center>
   <br>
-  <button type="submit" class="btn btn-success">Print</button>
+  <button type="submit" name="print" id="print" class="btn btn-success">Print</button>
 </center>
     <!-- Main component for a primary marketing message or call to action -->
     <!--trial
