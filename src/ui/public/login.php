@@ -54,7 +54,7 @@
                         <span class="fa fa-user"></span>
                     </span>
                 </div>
-                <input type="text" class="form-control" placeholder="Username" required="required">
+                <input type="text" class="form-control" id="uname" name="uname" placeholder="Username" required="required">
             </div>
         </div>
 		<div class="form-group">
@@ -64,7 +64,7 @@
                         <i class="fa fa-lock"></i>
                     </span>
                 </div>
-                <input type="password" class="form-control" placeholder="Password" required="required">
+                <input type="password" class="form-control" id="pword" name="pword" placeholder="Password" required="required">
             </div>
         </div>
         <div class="bottom-action clearfix">
