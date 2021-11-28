@@ -356,13 +356,13 @@ form.example::after {
                     <div class="col-sm-4"><h2>Sales Product <b>Details</b></h2></div>
                     <div class="col-sm-5">
                       <div class="col-sm-9">
-                        <select class="custom-select">
+                        <select id="select" name="select" class="custom-select">
                           <option selected>Select Products:</option>
                           <option value="1">Pataba</option>
                           <option value="2">Seeds</option>
                           <option value="3">Tools</option>
                         </select>
-                        <input type="text" class="form-control col-sm-4 quanpos" placeholder="Quantity">
+                        <input type="text" id="quantity" name="quantity" class="form-control col-sm-4 quanpos" placeholder="Quantity">
                         <button type="submit" class="btn btn-success productadd">Add</button>&nbsp;
                       </div>
                     </div>

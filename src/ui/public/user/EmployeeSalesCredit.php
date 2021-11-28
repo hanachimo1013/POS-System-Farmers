@@ -354,20 +354,20 @@ form.example::after {
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="form-group row">
-                  <label for="staticEmail" class="col-sm-2 col-form-label">Member Name:</label>
+                  <label for="staticEmail" id="membern" name="membern" class="col-sm-2 col-form-label">Member Name:</label>
                     <div class="col-sm-6">
                        <input type="text" class="form-control" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-5">
-                      <select class="custom-select">
+                      <select id="select" name="select" class="custom-select">
                           <option selected>Select Products:</option>
                           <option value="1">Pataba</option>
                           <option value="2">Seeds</option>
                           <option value="3">Tools</option>
                         </select>
-                        <input type="text" class="form-control col-sm-4 quanpos" placeholder="Quantity">
+                        <input type="text" id="quantity" name"quantity" class="form-control col-sm-4 quanpos" placeholder="Quantity">
                         <button type="submit" class="btn btn-success productadd">Add</button>&nbsp;
                     </div>
                 </div>

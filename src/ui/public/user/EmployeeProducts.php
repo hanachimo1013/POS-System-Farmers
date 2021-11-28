@@ -233,7 +233,7 @@
 
   <div class="container-fluid">
      <h2>Products</h2>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for product code.." title="Type in a name">
+<input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for product code.." title="Type in a name">
 <button type="submit" class="btn btn-success" id="search" >Search</button>
 <div class="crud">
 <button type="submit" class="btn btn-success" id="save" style="background-color:green;" >Save</button>
@@ -260,31 +260,31 @@
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label fsize">Product Code:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="product" placeholder="Product Code" >
+      <input type="text" class="form-control" id="product" name="product" placeholder="Product Code" >
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Name:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="name" placeholder="Product Name" >
+      <input type="text" class="form-control" id="name" name="name" placeholder="Product Name" >
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Category:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="category" placeholder="Product Category">
+      <input type="text" class="form-control" id="category" name="category" placeholder="Product Category">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Unit Price:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="unit" placeholder="Unit Price">
+      <input type="text" class="form-control" id="unit" name="unit" placeholder="Unit Price">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Re-order level:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="reorder" placeholder="Re-order lvl" >
+      <input type="text" class="form-control" id="reorder" name="reorder" placeholder="Re-order lvl" >
     </div>
   </div>
 </form>
