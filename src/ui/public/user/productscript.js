@@ -47,7 +47,7 @@ $(document).ready(function(){
 			function(data, status){
 					//result
 					var json=JSON.parse(data);
-					$("#name").get(0).value=json.data[0].name;
+		$("#name").get(0).value=json.data[0].name;
 		$("#category").get(0).value=json.data[0].category;
 		$("#unit").get(0).value=json.data[0].unit;
 		$("#reorder").get(0).value=json.data[0].reorder;

@@ -36,7 +36,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		// set the PDO error mode to exception
 		$conn->setAttribute(PDO::ATTR_ERRMODE,
 		PDO::ERRMODE_EXCEPTION);
-		$sql = "INSERT INTO emproduc (name, unit, category, reorder)
+		$sql = "INSERT INTO emproduc (name, category, unit, reorder)
 		VALUES ('". $name ."','". $category ."','". $unit ."','". $reorder ."')";
 
 		// use exec() because no results are returned

@@ -3,7 +3,7 @@
 <head>
 	<title>Employee Products</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="prudctscript.js"></script>
+	<script type="text/javascript" src="productscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -236,7 +236,7 @@
 <input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for product code.." title="Type in a name">
 <button type="submit" class="btn btn-success" id="search" >Search</button>
 <div class="crud">
-<button type="submit" class="btn btn-success" id="save" style="background-color:green;" >Save</button>
+<button type="submit" class="btn btn-success" id="save" style="background-color:;" >Save</button>
 <button type="submit" class="btn btn-success" id="delete" style="background-color:red;" >Delete</button>
 <button type="submit" class="btn btn-success" id="update" style="background-color:grey;" >Update</button>
 <button type="submit" class="btn btn-success" id="display" style="background-color:;" >Display</button>
@@ -260,7 +260,7 @@
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label fsize">Product Code:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="product" name="product" placeholder="Product Code Auto Generated" readonly>
+      <input type="text" class="form-control" id="product" name="product" placeholder="Product Code" >
     </div>
   </div>
   <div class="form-group row">
