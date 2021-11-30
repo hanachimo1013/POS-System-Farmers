@@ -56,7 +56,7 @@ $(document).ready(function(){
 	});
 
 $("#update").click(function(){
-			var product=$("#name").get(0).value;
+	var name=$("#name").get(0).value;
 	var category=$("#category").get(0).value;
 	var unit=$("#unit").get(0).value;
 	var reorder=$("#reorder").get(0).value;

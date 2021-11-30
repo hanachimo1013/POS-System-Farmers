@@ -3,7 +3,7 @@
 <head>
 	<title>Employee Products</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="script1.js"></script>
+	<script type="text/javascript" src="prudctscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -260,7 +260,7 @@
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label fsize">Product Code:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="product" name="product" placeholder="Product Code" >
+      <input type="text" class="form-control" id="product" name="product" placeholder="Product Code Auto Generated" readonly>
     </div>
   </div>
   <div class="form-group row">

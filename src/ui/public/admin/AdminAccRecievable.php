@@ -255,60 +255,6 @@ form.example::after {
   display: table;
 }
 </style>
-<script>
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();
-  var actions = $("table td:last-child").html();
-  // Append table with add row form on add new button click
-    $(".add-new").click(function(){
-    $(this).attr("disabled", "disabled");
-    var index = $("table tbody tr:last-child").index();
-        var row = '<tr>' +
-            '<td><input type="text" class="form-control" name="name" id="name"></td>' +
-            '<td><input type="text" class="form-control" name="department" id="department"></td>' +
-            '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
-      '<td>' + actions + '</td>' +
-        '</tr>';
-      $("table").append(row);
-    $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-  // Add row on add button click
-  $(document).on("click", ".add", function(){
-    var empty = false;
-    var input = $(this).parents("tr").find('input[type="text"]');
-        input.each(function(){
-      if(!$(this).val()){
-        $(this).addClass("error");
-        empty = true;
-      } else{
-                $(this).removeClass("error");
-            }
-    });
-    $(this).parents("tr").find(".error").first().focus();
-    if(!empty){
-      input.each(function(){
-        $(this).parent("td").html($(this).val());
-      });
-      $(this).parents("tr").find(".add, .edit").toggle();
-      $(".add-new").removeAttr("disabled");
-    }
-    });
-  // Edit row on edit button click
-  $(document).on("click", ".edit", function(){
-        $(this).parents("tr").find("td:not(:last-child)").each(function(){
-      $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-    });
-    $(this).parents("tr").find(".add, .edit").toggle();
-    $(".add-new").attr("disabled", "disabled");
-    });
-  // Delete row on delete button click
-  $(document).on("click", ".delete", function(){
-        $(this).parents("tr").remove();
-    $(".add-new").removeAttr("disabled");
-    });
-});
-</script>
 <body>
 	<!--nav main-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -401,7 +347,7 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-sm-7"><h2>Farmers Credit Transaction <b>Details</b></h2></div>
                     <div class="col-sm-5">
-                        <form class="example" action="/action_page.php" style="margin:auto;max-width:400px">
+                        <form class="example"  style="margin:auto;max-width:400px">
                           <input type="text" placeholder="Search.." name="search2">
                           <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
@@ -411,38 +357,13 @@ $(document).ready(function(){
             <table class="table table-bordered">
                 <thead>
                     <tr>
+												<th>ID</th>
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Credits</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Subhash</td>
-                        <td>09XXXXX</td>
-                        <td>88***88***</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Subhash</td>
-                        <td>09XXXXX</td>
-                        <td>88***88***</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Subhash</td>
-                        <td>09XXXX</td>
-                        <td>88***88***</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
             </table>
         </div>
     </div>

@@ -36,7 +36,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		// set the PDO error mode to exception
 		$conn->setAttribute(PDO::ATTR_ERRMODE,
 		PDO::ERRMODE_EXCEPTION);
-		$sql = "INSERT INTO product (name, unit, category, reorder)
+		$sql = "INSERT INTO emproduc (name, unit, category, reorder)
 		VALUES ('". $name ."','". $category ."','". $unit ."','". $reorder ."')";
 
 		// use exec() because no results are returned
@@ -64,7 +64,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 		}
-		$sql = "SELECT * FROM product";
+		$sql = "SELECT * FROM emproduc";
 		$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$data=array();
@@ -101,7 +101,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 			}
-			$sql = "SELECT * FROM product where product='". $product ."'";
+			$sql = "SELECT * FROM emproduc where product='". $product ."'";
 			$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 				$data=array();
@@ -136,7 +136,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 		// set the PDO error mode to exception
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "UPDATE product set name='". $name ."', category='". $category ."', unit='". $unit ."', reorder='". $reorder ."' where product='". $product ."'";
+			$sql = "UPDATE emproduc set name='". $name ."', category='". $category ."', unit='". $unit ."', reorder='". $reorder ."' where product='". $product ."'";
 
 	   // use exec() because no results are returned
 			$conn->exec($sql);
@@ -168,7 +168,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 			if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 			}
-			$sql = "DELETE FROM product where product='". $product ."'";
+			$sql = "DELETE FROM emproduc where product='". $product ."'";
 			if ($conn->query($sql) === TRUE) {
 				$response->getBody()->write(json_encode(array("status"=>"success","data"=>null)));
 			}

@@ -397,7 +397,7 @@ $(document).ready(function(){
                     <div class="row">
                         <div class="col-sm-7"><h2>Farmers Credit Transaction <b>Details</b></h2></div>
                         <div class="col-sm-5">
-                            <form class="example" action="/action_page.php" style="margin:auto;max-width:400px">
+                            <form class="example"style="margin:auto;max-width:400px">
                               <input type="text" id="search2"  name="search2" placeholder="Search..">
                               <button type="submit"><i class="fa fa-search"></i></button>
                             </form>
@@ -407,38 +407,13 @@ $(document).ready(function(){
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Phone</th>
-                            <th>Credits</th>
-                            <th>Actions</th>
+														<th style="width:20%;">ID</th>
+                            <th style="width:20%;">Name</th>
+                            <th style="width:20%;">Phone</th>
+                            <th style="width:20%;">Credits</th>
+                            <th style="width:15%;">Actions</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>Subhash</td>
-                            <td>09XXXXX</td>
-                            <td>88***88***</td>
-                            <td>
-                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Subhash</td>
-                            <td>09XXXXX</td>
-                            <td>88***88***</td>
-                            <td>
-                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Subhash</td>
-                            <td>09XXXX</td>
-                            <td>88***88***</td>
-                            <td>
-                                <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
                 </table>
             </div>
         </div>
