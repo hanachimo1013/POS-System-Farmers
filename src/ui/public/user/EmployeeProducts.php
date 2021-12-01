@@ -230,10 +230,10 @@
 	</div>
 
 <div class="content-container">
-
+	<div>
   <div class="container-fluid">
      <h2>Products</h2>
-<input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for product code.." title="Type in a name">
+<input type="text" id="myInput" name="search" placeholder="Search for product code..">
 <button type="submit" class="btn btn-success" id="search" >Search</button>
 <div class="crud">
 <button type="submit" class="btn btn-success" id="save" style="background-color:;" >Save</button>

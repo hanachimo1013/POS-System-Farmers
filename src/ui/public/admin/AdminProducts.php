@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Admin Products</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="productscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -105,7 +107,12 @@
 .card-text{
 	color: white;
 }
-
+.crud{
+	position: absolute;
+  left: 59%;
+  top: 64%;
+  width: 35%;
+}
 #myInput {
   background-image: url('css/searchicon.png');
   background-position: 10px 10px;
@@ -138,7 +145,7 @@
 }
 .divpps{
   position: absolute;
-  left: 60%;
+  left: 59%;
   top: 20%;
   width: 38%;
 }
@@ -226,144 +233,65 @@
     </li>
   </ul>
 </div>
-
 <div class="content-container">
-<div>
+	<div>
   <div class="container-fluid">
-   <h2>Products</h2>
-<input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-<button type="submit"  class="btn btn-success">Search</button>
+     <h2>Products</h2>
+<input type="text" id="myInput" name="search" placeholder="Search for product code..">
+<button type="submit" class="btn btn-success" id="search" >Search</button>
+<div class="crud">
+<button type="submit" class="btn btn-success" id="save" style="background-color:;" >Save</button>
+<button type="submit" class="btn btn-success" id="delete" style="background-color:red;" >Delete</button>
+<button type="submit" class="btn btn-success" id="update" style="background-color:grey;" >Update</button>
+<button type="submit" class="btn btn-success" id="display" style="background-color:;" >Display</button>
+</div>
+
 <table id="myTable">
-  <tr class="header">
-    <th style="width:20%;">ID</th>
-    <th style="width:20%;">Name</th>
-    <th style="width:20%;">Category</th>
-    <th style="width:20%;">Price</th>
-    <th style="width:15%;">Reoderlvl</th>
-  </tr>
-  <tr>
-    <td>0001</td>
-    <td>Germany</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0002</td>
-    <td>Sweden</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0003</td>
-    <td>UK</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0004</td>
-    <td>Germany</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0005</td>
-    <td>Canada</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>00006</td>
-    <td>Italy</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>00007</td>
-    <td>UK</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0008</td>
-    <td>France</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
+ </thead><tr class="header">
+		<td style="width:20%;">Product CODE</td>
+		<td style="width:20%;">Product Name</td>
+		<td style="width:20%;">Category</td>
+		<td style="width:20%;">Price</td>
+		<td style="width:15%;">Reoderlvl</td>
+	</tr></thead>
+	<tbody id="data">
+</tbody>
 </table>
 
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-</script>
-</div>
+	</div>
 <div class="divpps">
   <form>
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label fsize">Product Code:</label>
     <div class="col-sm-8">
-      <input type="text" readonly class="form-control-plaintext" id="staticId" value="">
+      <input type="text" class="form-control" id="product" name="product" placeholder="Product Code Auto Generated" readonly>
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Description:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Name:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="proDes" name="proDes" placeholder="Product Description">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Product Name" >
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" id="Category" name="Category" class="col-sm-2 col-form-label fsize">Category:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Category:</label>
     <div class="col-sm-8">
-      <select class="custom-select">
-        <option selected>Open this select Category</option>
-        <option value="1">Pataba</option>
-        <option value="2">Seeds</option>
-        <option value="3">Tools</option>
-      </select>
+      <input type="text" class="form-control" id="category" name="category" placeholder="Product Category">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" id="Uprice" name="Uprice" class="col-sm-2 col-form-label fsize">Unit Price:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Unit Price:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" placeholder="Unit Price">
+      <input type="text" class="form-control" id="unit" name="unit" placeholder="Unit Price">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Re-order level:</label>
     <div class="col-sm-8">
-      <input type="text" id="reorder" name="reorder" class="form-control" placeholder="Re-order lvl">
+      <input type="text" class="form-control" id="reorder" name="reorder" placeholder="Re-order lvl" >
     </div>
   </div>
 </form>
-  <div class="form-inline">
-    <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
-    <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" id="deleteDB" class="btn btn-danger">DeleteDB</button>
-  </div>
 </div>
 
 
