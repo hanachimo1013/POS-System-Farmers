@@ -107,7 +107,12 @@
 .card-text{
 	color: white;
 }
-
+.crud{
+	position: absolute;
+  left: 59%;
+  top: 64%;
+  width: 35%;
+}
 #myInput {
   background-image: url('/css/searchicon.png');
   background-position: 10px 10px;
@@ -140,7 +145,7 @@
 }
 .divpps{
   position: absolute;
-  left: 60%;
+  left: 59%;
   top: 20%;
   width: 35%;
 }
@@ -230,24 +235,34 @@
 <div>
   <div class="container-fluid">
    <h2>Members</h2>
-<input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<input type="text" id="myInput" name="myInput" placeholder="Search for names..">
 <button type="submit" id="search" class="btn btn-success">Search</button>
+<div class="crud">
+	<button type="submit" id="save" class="btn btn-success">Create</button>&nbsp;
+	<button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
+	<button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
+	<button type="submit" id="display" class="btn btn-success">Display</button>
+</div>
+
 <table id="myTable">
-  <tr class="header">
+  <thead><tr class="header">
     <th style="width:10%;">ID</th>
     <th style="width:20%;">Lastname</th>
     <th style="width:20%;">Firstname</th>
 		<th style="width:15%;">Middle Initial</th>
     <th style="width:20%;">Phone</th>
     <th style="width:20%;">Address</th>
-  </tr>
+  </tr></thead>
+	<tbody id="data1">
+</tbody>
 </div>
+
 <div class="divpps">
   <form>
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">ID:</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticId" value="">
+      <input type="text" readonly class="form-control-plaintext" id="id" value="">
     </div>
   </div>
   <div class="form-group row">
@@ -281,12 +296,6 @@
     </div>
   </div>
 </form>
-  <div class="form-inline">
-    <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
-    <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
-		<button type="submit" id="display" class="btn btn-success" style="background-color:;" >Display</button>
-  </div>
 </div>
 
 

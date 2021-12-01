@@ -247,7 +247,7 @@
 </div>
 
 <table id="myTable">
- </thead><tr class="header">
+ <thead><tr class="header">
 		<td style="width:20%;">Product CODE</td>
 		<td style="width:20%;">Product Name</td>
 		<td style="width:20%;">Category</td>
