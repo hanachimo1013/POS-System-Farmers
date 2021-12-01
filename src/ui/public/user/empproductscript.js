@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var category=$("#category").get(0).value;
 		var unit=$("#unit").get(0).value;
 		var reorder=$("#reorder").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/user/public/postName",
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/user/public/employeepostName",
 		JSON.stringify({
 			name: name,
 			category: category,

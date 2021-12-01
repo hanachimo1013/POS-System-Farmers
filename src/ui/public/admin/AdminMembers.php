@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Admin Members</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="adminmemberscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -232,90 +234,13 @@
 <button type="submit" id="search" class="btn btn-success">Search</button>
 <table id="myTable">
   <tr class="header">
-    <th style="width:20%;">ID</th>
+    <th style="width:10%;">ID</th>
     <th style="width:20%;">Lastname</th>
     <th style="width:20%;">Firstname</th>
+		<th style="width:15%;">Middle Initial</th>
     <th style="width:20%;">Phone</th>
-    <th style="width:15%;">Address</th>
+    <th style="width:20%;">Address</th>
   </tr>
-  <tr>
-    <td>0001</td>
-    <td>Germany</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0002</td>
-    <td>Sweden</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0003</td>
-    <td>UK</td>
-    <td>jake</td>
-    <td>Manyak</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0004</td>
-    <td>Germany</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0005</td>
-    <td>Canada</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>00006</td>
-    <td>Italy</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>00007</td>
-    <td>UK</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>0008</td>
-    <td>France</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
-
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-</script>
 </div>
 <div class="divpps">
   <form>
@@ -340,7 +265,7 @@ function myFunction() {
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">M.I:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="AdminAccRecievable" placeholder="Middle Initial">
+      <input type="text" class="form-control" id="mini" placeholder="Middle Initial">
     </div>
   </div>
   <div class="form-group row">
@@ -360,7 +285,7 @@ function myFunction() {
     <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
     <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
     <button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" id="deleteDB" class="btn btn-danger">DeleteDB</button>
+		<button type="submit" id="display" class="btn btn-success" style="background-color:;" >Display</button>
   </div>
 </div>
 

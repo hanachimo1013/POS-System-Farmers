@@ -8,9 +8,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	$app = new \Slim\App;
 
 
-	$app->get('/getName/{name}/{category}/{unit}/{reorder}/{comment}/{Fname}/{Lname}/
-	{Mini}/{Address}/{Uname}/{Pword}/{fname}/{lname}/{mini}/{address}/{numb}/
-	{Pcode}}/{date}/{Aquan}/{proDes}/', function (Request $request, Response
+	$app->get('/getName/{name}/{category}/{unit}/{reorder}/', function (Request $request, Response
 	$response, array $args) {
 
 	//endpoint get greeting
@@ -19,9 +17,10 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 
 
-	//AdminProducts endpoints
+
+	//EmployeeProducts endpoint
 	//endpoint post greeting
-	$app->post('/postName', function (Request $request, Response $response, array $args)
+	$app->post('/employeepostName', function (Request $request, Response $response, array $args)
 	{
 	$data=json_decode($request->getBody());
 		$name =$data->name ;
@@ -185,22 +184,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 			$conn->close();
 		return $response;
 		});
-//end of AdminProducts endpoints
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//end of EmployeeProduct endpoints
 
 
 

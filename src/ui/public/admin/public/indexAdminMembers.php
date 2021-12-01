@@ -8,7 +8,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	$app = new \Slim\App;
 
 
-	$app->get('/getName/{name}/{category}/{unit}/{reorder}/', function (Request $request, Response
+	$app->get('/getName/{fname}/{lname}/{mini}/{numb}/{address}/', function (Request $request, Response
 	$response, array $args) {
 
 	//endpoint get greeting
@@ -17,16 +17,16 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 
 
-
-	//EmployeeProducts endpoint
+	//Adminids endpoints
 	//endpoint post greeting
-	$app->post('/postName', function (Request $request, Response $response, array $args)
+	$app->post('/adminmemberpostName', function (Request $request, Response $response, array $args)
 	{
 	$data=json_decode($request->getBody());
-		$name =$data->name ;
-		$category =$data->category ;
-		$unit =$data->unit ;
-		$reorder =$data->reorder ;
+		$fname =$data->fname ;
+		$lname =$data->lname ;
+		$mini =$data->mini ;
+		$numb =$data->numb ;
+		$address =$data->address ;
 
 
 		//Database
@@ -41,8 +41,8 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		// set the PDO error mode to exception
 		$conn->setAttribute(PDO::ATTR_ERRMODE,
 		PDO::ERRMODE_EXCEPTION);
-		$sql = "INSERT INTO emproduc (name, category, unit, reorder)
-		VALUES ('". $name ."','". $category ."','". $unit ."','". $reorder ."')";
+		$sql = "INSERT INTO adminmem (fname, lname, mini, numb, address)
+		VALUES ('". $fname ."','". $lname ."','". $mini ."','". $numb ."','". $address ."')";
 
 		// use exec() because no results are returned
 		$conn->exec($sql);
@@ -55,7 +55,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 
 	//endpoint post print
-	$app->post('/employeepostPrint', function (Request $request, Response $response, array $args) {
+	$app->post('/adminmemberpostPrint', function (Request $request, Response $response, array $args) {
 
 	//Database
 	$servername = "localhost";
@@ -70,12 +70,12 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 		}
-		$sql = "SELECT * FROM emproduc";
+		$sql = "SELECT * FROM adminmem";
 		$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		$data=array();
 			while($row = $result->fetch_assoc()) {
-			array_push($data,array("product"=>$row["product"] ,"name"=>$row["name"] ,"category"=>$row["category"],"unit"=>$row["unit"], "reorder"=>$row["reorder"]));
+			array_push($data,array("id"=>$row["id"] ,"fname"=>$row["fname"] ,"lname"=>$row["lname"],"mini"=>$row["mini"], "numb"=>$row["numb"], "address"=>$row["address"]));
 			}
 
 		$data_body=array("status"=>"success","data"=>$data);
@@ -90,10 +90,10 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 
 	//endpoint search
-	$app->post('/employeesearchproduct', function (Request $request, Response $response, array
+	$app->post('/adminsearchmember', function (Request $request, Response $response, array
 	$args) {
 	$data=json_decode($request->getBody());
-	$product =$data->product;
+	$id =$data->id;
 
 	//Database
 		$servername = "localhost";
@@ -108,12 +108,12 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 			}
-			$sql = "SELECT * FROM emproduc where product='". $product ."'";
+			$sql = "SELECT * FROM adminmem where id='". $id ."'";
 			$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 				$data=array();
 					while($row = $result->fetch_assoc()) {
-					array_push($data,array("product"=>$row["product"] ,"name"=>$row["name"] ,"category"=>$row["category"], "unit"=>$row["unit"], "reorder"=>$row["reorder"]));
+					array_push($data,array("id"=>$row["id"] ,"fname"=>$row["fname"] ,"lname"=>$row["lname"], "mini"=>$row["mini"], "numb"=>$row["numb"], "address"=>$row["address"]));
 					}
 					$data_body=array("status"=>"success","data"=>$data);
 					$response->getBody()->write(json_encode($data_body));
@@ -125,13 +125,14 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 
 	//endpoint update
-		$app->post('/employeeupdateproduct', function (Request $request, Response $response, array $args) {
+		$app->post('/adminupdatemember', function (Request $request, Response $response, array $args) {
 		$data=json_decode($request->getBody());
-		$product =$data->product ;
-		$name =$data->name ;
-		$category =$data->category ;
-		$unit =$data->unit ;
-		$reorder =$data->reorder ;
+		$id =$data->id ;
+		$fname =$data->fname ;
+		$lname =$data->lname ;
+		$mini =$data->mini ;
+		$numb =$data->numb ;
+		$address =$data->address ;
 
 	//Database
 		$servername = "localhost";
@@ -144,7 +145,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 		// set the PDO error mode to exception
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "UPDATE emproduc set name='". $name ."', category='". $category ."', unit='". $unit ."', reorder='". $reorder ."' where product='". $product ."'";
+			$sql = "UPDATE adminmem set fname='". $fname ."', lname='". $lname ."', mini='". $mini ."', numb='". $numb ."', address='". $address ."' where id='". $id ."'";
 
 	   // use exec() because no results are returned
 			$conn->exec($sql);
@@ -159,10 +160,10 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 
 	//endpoint delete
-		$app->post('/employeedeleteproduct', function (Request $request, Response $response, array
+		$app->post('/admindeletemember', function (Request $request, Response $response, array
 		$args) {
 		$data=json_decode($request->getBody());
-		$product =$data->product;
+		$id =$data->id;
 
 		//Database
 		$servername = "localhost";
@@ -177,14 +178,29 @@ use \Psr\Http\Message\ResponseInterface as Response;
 			if ($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 			}
-			$sql = "DELETE FROM emproduc where product='". $product ."'";
+			$sql = "DELETE FROM adminmem where id='". $id ."'";
 			if ($conn->query($sql) === TRUE) {
 				$response->getBody()->write(json_encode(array("status"=>"success","data"=>null)));
 			}
 			$conn->close();
 		return $response;
 		});
-//end of EmployeeProduct endpoints
+//end of Adminids endpoints
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

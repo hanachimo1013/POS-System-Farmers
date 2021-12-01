@@ -3,7 +3,7 @@
 <head>
 	<title>Admin Products</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="productscript.js"></script>
+	<script type="text/javascript" src="adminproductscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -240,10 +240,10 @@
 <input type="text" id="myInput" name="search" placeholder="Search for product code..">
 <button type="submit" class="btn btn-success" id="search" >Search</button>
 <div class="crud">
-<button type="submit" class="btn btn-success" id="save" style="background-color:;" >Save</button>
-<button type="submit" class="btn btn-success" id="delete" style="background-color:red;" >Delete</button>
-<button type="submit" class="btn btn-success" id="update" style="background-color:grey;" >Update</button>
-<button type="submit" class="btn btn-success" id="display" style="background-color:;" >Display</button>
+<button type="submit" class="btn btn-success" id="save">Create</button>
+<button type="submit" class="btn btn-danger" id="delete">Delete</button>
+<button type="submit" class="btn btn-info" id="update" >Update</button>
+<button type="submit" class="btn btn-success" id="display" >Display</button>
 </div>
 
 <table id="myTable">
