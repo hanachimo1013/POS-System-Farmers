@@ -363,7 +363,7 @@ form.example::after {
                           <option value="3">Tools</option>
                         </select>
                         <input type="text" id="quantity" name="quantity" class="form-control col-sm-4 quanpos" placeholder="Quantity">
-                        <button type="submit" class="btn btn-success productadd">Add</button>&nbsp;
+                        <button type="submit" id="adquan" class="btn btn-success productadd">Add</button>&nbsp;
                       </div>
                     </div>
                 </div>
@@ -426,17 +426,17 @@ form.example::after {
                 <form>
                   <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Amount:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    <input type="text" id="amoun" name="amoun" class="form-control" id="recipient-name">
                   </div>
                   <div class="form-group">
                     <label for="message-text" class="col-form-label">Vouchers:</label>
-                    <input type="text" class="form-control" id="recipient-name">
+                    <input type="text" id="vouch" name="vouch" class="form-control" id="recipient-name">
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Print Reciept</button>
+                <button type="button" id="printrec" name="printrec" class="btn btn-primary">Print Reciept</button>
               </div>
             </div>
           </div>

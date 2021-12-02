@@ -361,14 +361,14 @@ form.example::after {
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-5">
-                      <select id="select" name="select" class="custom-select">
+                      <select id="select1" name="select1" class="custom-select">
                           <option selected>Select Products:</option>
                           <option value="1">Pataba</option>
                           <option value="2">Seeds</option>
                           <option value="3">Tools</option>
                         </select>
-                        <input type="text" id="quantity" name"quantity" class="form-control col-sm-4 quanpos" placeholder="Quantity">
-                        <button type="submit" class="btn btn-success productadd">Add</button>&nbsp;
+                        <input type="text" id="quantity1" name"quantity1" class="form-control col-sm-4 quanpos" placeholder="Quantity">
+                        <button type="submit" id="adquan1" name="adquan1" class="btn btn-success productadd">Add</button>&nbsp;
                     </div>
                 </div>
             <table class="table table-bordered">
@@ -429,13 +429,13 @@ form.example::after {
                 <form>
                   <div class="form-group">
                     <label for="recipient-name" class="col-form-label">Farmers Name:</label>
-                    <input type="text" class="form-control" id="recipient-name" readonly>
+                    <input type="text"  class="form-control" id="recipientname" name="racipientname" readonly>
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary">Print Reciept</button>
+                <button type="button" id="printrec1" name="printrec1" class="btn btn-primary">Print Reciept</button>
               </div>
             </div>
           </div>

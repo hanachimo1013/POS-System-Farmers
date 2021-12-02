@@ -237,7 +237,7 @@
       </div>
   <center>
     <br>
-      <button type="submit" class="btn btn-success">Print</button>
+      <button type="submit" id="print" name="print" class="btn btn-success">Print</button>
   </center>
     </div>
 
