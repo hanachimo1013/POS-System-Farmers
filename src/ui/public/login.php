@@ -75,7 +75,7 @@
                 </select>
             </label>
             <div class="logposs">
-            	<button type="submit" class="btn btn-primary btn-sm float-right">Log in</button>
+            	<button type="submit" id="login" class="btn btn-primary btn-sm float-right">Log in</button>
         	</div>
         </div>
     </form>
