@@ -14,6 +14,10 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	//endpoint get greeting
 	return $response;
 	});
+
+
+
+	//product admin endpoints
 	//endpoint post greeting
 	$app->post('/postName', function (Request $request, Response $response, array $args)
 	{
@@ -47,6 +51,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 		}
 		$conn = null;
 });
+
 
 	//endpoint post prin
 	$app->post('/employeepostPrint', function (Request $request, Response $response, array $args) {
@@ -82,6 +87,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	return $response;
 	});
 
+
 	//endpoint search student
 	$app->post('/employeesearchproduct', function (Request $request, Response $response, array
 	$args) {
@@ -116,6 +122,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 					return $response;
 				});
 
+
 	//endpoint update student
 		$app->post('/employeeupdateproduct', function (Request $request, Response $response, array $args) {
 		$data=json_decode($request->getBody());
@@ -149,6 +156,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 			return $response;
 });
 
+
 	//endpoint delete student
 		$app->post('/employeedeleteproduct', function (Request $request, Response $response, array
 		$args) {
@@ -175,8 +183,25 @@ use \Psr\Http\Message\ResponseInterface as Response;
 			$conn->close();
 		return $response;
 		});
+//end of product admin endpoints
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $app->run();
-
-
 
 ?>

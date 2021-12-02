@@ -229,7 +229,7 @@
   <div class="container-fluid">
    <h2>Members</h2>
 <input type="text" id="myInput" name="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-<button type="submit" class="btn btn-success">Search</button>
+<button type="submit" id="search" class="btn btn-success">Search</button>
 <table id="myTable">
   <tr class="header">
     <th style="width:20%;">ID</th>
@@ -328,31 +328,31 @@ function myFunction() {
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Firstname:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Fname">
+      <input type="text" class="form-control" id="fname" placeholder="Fname">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Lastname:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Lname">
+      <input type="text" class="form-control" id="lname" placeholder="Lname">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">M.I:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Middle Initial">
+      <input type="text" class="form-control" id="AdminAccRecievable" placeholder="Middle Initial">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Address:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Address">
+      <input type="text" class="form-control" id="address" placeholder="Address">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Phone:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" placeholder="Number">
+      <input type="text" class="form-control" id="numb" placeholder="Number">
     </div>
   </div>
 </form>

@@ -348,7 +348,7 @@ form.example::after {
                     <div class="col-sm-7"><h2>Farmers Credit Transaction <b>Details</b></h2></div>
                     <div class="col-sm-5">
                         <form class="example"  style="margin:auto;max-width:400px">
-                          <input type="text" placeholder="Search.." name="search2">
+                          <input type="text" id="search2" placeholder="Search.." name="search2">
                           <button type="submit"><i class="fa fa-search"></i></button>
                         </form>
                     </div>

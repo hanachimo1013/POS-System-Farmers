@@ -261,7 +261,7 @@
     <h5 class="card-title">Voucher Coupon</h5>
     <p class="card-text"><b>20% OFF YOUR PURCHASE</b></p>
     <p class="card-text"><b>35% OFF For Registered Farmers</b></p>
-    <a href="#" class="btn btn-primary">Generate Code</a>
+    <a href="#" id="Genco" class="btn btn-primary">Generate Code</a>
     <br><br>
     <center>
     <div class="col-sm-2">
@@ -269,7 +269,7 @@
      </div>
    </center>
     <br><br>
-    <a href="#" class="btn btn-primary">Print</a>
+    <a href="#" id="print" class="btn btn-primary">Print</a>
   </div>
   <div class="card-footer text-muted">
     © Alright Reserved
