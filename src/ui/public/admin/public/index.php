@@ -8,7 +8,9 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	$app = new \Slim\App;
 
 
-	$app->get('/getName/{name}/{category}/{unit}/{reorder}/', function (Request $request, Response
+	$app->get('/getName/{name}/{category}/{unit}/{reorder}/{comment}/{Fname}/{Lname}/
+	{Mini}/{Address}/{Uname}/{Pword}/{fname}/{lname}/{mini}/{address}/{numb}/
+	{Pcode}}/{date}/{Aquan}/{proDes}/', function (Request $request, Response
 	$response, array $args) {
 
 	//endpoint get greeting
