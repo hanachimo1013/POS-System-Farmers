@@ -1,4 +1,4 @@
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /src/api/index.php [L]
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} localhost/ [NC]
+RewriteRule ^(.*)$ http://localhost/Project_Manny/src/api/ [R=301,NC]
