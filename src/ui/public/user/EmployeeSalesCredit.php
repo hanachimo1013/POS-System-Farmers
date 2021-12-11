@@ -371,47 +371,6 @@ form.example::after {
                         <button type="submit" id="adquan1" name="adquan1" class="btn btn-success productadd">Add</button>&nbsp;
                     </div>
                 </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Product Name</th>
-                        <th>Price</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0001</td>
-                        <td>Nestea</td>
-                        <td>100.00</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>0002</td>
-                        <td>Roller Coaster</td>
-                        <td>1000.00</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>0003</td>
-                        <td>Pagod Nako..</td>
-                        <td>700.00</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><p class="total">Total:</p></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
      <center>
