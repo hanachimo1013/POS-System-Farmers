@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var mini=$("#mini").get(0).value;
 		var numb=$("#numb").get(0).value;
 		var address=$("#address").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/adminmemberpostName",
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/user/public/employeememberpostName",
 		JSON.stringify({
 			fname: fname,
 			lname: lname,
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	});
 
 	 $("#display").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminmemberpostPrint",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeememberpostPrint",
 			function(data, status){
 					var json=JSON.parse(data);
 					var row="";
@@ -40,7 +40,7 @@ $(document).ready(function(){
 	 $("#search").click(function(){
 			id=prompt("Search ID");
 			//endpoint
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminsearchmember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/user/employeesearchmember",
 			JSON.stringify(
 					//payload
 					{
@@ -54,7 +54,7 @@ $(document).ready(function(){
 		$("#lname").get(0).value=json.data[0].lname;
 		$("#mini").get(0).value=json.data[0].mini;
 		$("#numb").get(0).value=json.data[0].numb;
-		$("#search").get(0).value=json.data[0].address;
+		$("#address").get(0).value=json.data[0].address;
 					console.log(json);
 			});
 	});
@@ -65,7 +65,7 @@ $("#update").click(function(){
 	var mini=$("#mini").get(0).value;
 	var numb=$("#numb").get(0).value;
 	var address=$("#address").get(0).value;
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminupdatemember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeeupdatemember",
 			JSON.stringify({
 					id: id,
 					fname: fname,
@@ -80,7 +80,7 @@ $("#update").click(function(){
 	});
 
 	$("#delete").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/admindeletemember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeedeletemember",
 			JSON.stringify({
 					id:id
 			}),

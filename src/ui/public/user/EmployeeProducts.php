@@ -3,7 +3,7 @@
 <head>
 	<title>Employee Products</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="empproductscript.js"></script>
+	<script type="text/javascript" src="scripts/empproductscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
