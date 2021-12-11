@@ -17,7 +17,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 
 
-	//Adminids endpoints
+	//AdminProducts endpoints
 	//endpoint post greeting
 	$app->post('/adminmemberpostName', function (Request $request, Response $response, array $args)
 	{
@@ -185,7 +185,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 			$conn->close();
 		return $response;
 		});
-//end of Adminids endpoints
+//end of AdminProducts endpoints
 
 
 

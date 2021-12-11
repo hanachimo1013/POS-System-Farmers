@@ -110,11 +110,11 @@
 .crud{
 	position: absolute;
   left: 59%;
-  top: 64%;
+  top: 68%;
   width: 35%;
 }
 #myInput {
-  background-image: url('/css/searchicon.png');
+  background-image: url('css/searchicon.png');
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 40%;
@@ -253,7 +253,7 @@
     <th style="width:20%;">Phone</th>
     <th style="width:20%;">Address</th>
   </tr></thead>
-	<tbody id="data1">
+	<tbody id="data">
 </tbody>
 </div>
 
@@ -283,16 +283,16 @@
       <input type="text" class="form-control" id="mini" placeholder="Middle Initial">
     </div>
   </div>
+	<div class="form-group row">
+		<label for="inputPassword" class="col-sm-2 col-form-label">Phone:</label>
+		<div class="col-sm-10">
+			<input type="text" class="form-control" id="numb" placeholder="Number">
+		</div>
+	</div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Address:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" id="address" placeholder="Address">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Phone:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="numb" placeholder="Number">
     </div>
   </div>
 </form>

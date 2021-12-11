@@ -14,15 +14,15 @@ $(document).ready(function(){
 			numb: numb,
 			address: address
 		}),
-		function(data1,status){
-			alert("Data: " + data1 + "\nStatus: " + status);
+		function(data,status){
+			alert("Data: " + data + "\nStatus: " + status);
 		});
 	});
 
 	 $("#display").click(function(){
 			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminmemberpostPrint",
-			function(data1, status){
-					var json=JSON.parse(data1);
+			function(data, status){
+					var json=JSON.parse(data);
 					var row="";
 					for(var i=0;i<json.data.length;i++){
 							row=row+"<tr><td>"+json.data[i].id+
@@ -33,7 +33,7 @@ $(document).ready(function(){
 			"</td><td>"+json.data[i].address+
 			"</td></tr>";
 					}
-					$("#data1").get(0).innerHTML=row;
+					$("#data").get(0).innerHTML=row;
 			});
 	});
 
@@ -47,9 +47,9 @@ $(document).ready(function(){
 							id:id
 					}
 			),
-			function(data1, status){
+			function(data, status){
 					//result
-					var json=JSON.parse(data1);
+					var json=JSON.parse(data);
 			$("#fname").get(0).value=json.data[0].fname;
 		$("#lname").get(0).value=json.data[0].lname;
 		$("#mini").get(0).value=json.data[0].mini;
@@ -74,8 +74,8 @@ $("#update").click(function(){
 					numb: numb,
 					address: address
 			}),
-			function(data1, status){
-					alert("Data: " + data1 + "\nStatus: " + status);
+			function(data, status){
+					alert("Data: " + data + "\nStatus: " + status);
 			});
 	});
 
@@ -84,8 +84,8 @@ $("#update").click(function(){
 			JSON.stringify({
 					id:id
 			}),
-			function(data1, status){
-					alert("Data: " + data1 + "\nStatus: " + status);
+			function(data, status){
+					alert("Data: " + data + "\nStatus: " + status);
 			});
 	});
 });
