@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var lname=$("#lname").get(0).value;
 		var mini=$("#mini").get(0).value;
 		var numb=$("#numb").get(0).value;
-		var numb=$("#address").get(0).value;
+		var address=$("#address").get(0).value;
 		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/adminmemberpostName",
 		JSON.stringify({
 			fname: fname,

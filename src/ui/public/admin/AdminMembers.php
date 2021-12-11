@@ -255,6 +255,7 @@
   </tr></thead>
 	<tbody id="data">
 </tbody>
+</table>
 </div>
 
 <div class="divpps">
