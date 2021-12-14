@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{HTTP_HOST} localhost [NC]
+RewriteRule ^(.*)$ http://127.0.0.1/POS-System-Farmers/src/api/index.php [R=301,NC]
