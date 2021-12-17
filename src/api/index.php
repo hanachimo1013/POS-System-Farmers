@@ -22,6 +22,4 @@ $app->get('/user', function(Request $req, Response $res, $args = []){
   return $res;
 });
 
-// API Methods
-
 $app->run();
