@@ -190,12 +190,6 @@
 <div class="divpps">
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
   <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label">ID:</label>
-    <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticId" value="">
-    </div>
-  </div>
-  <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Firstname:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="fname" id="firstname"placeholder="Fname">
