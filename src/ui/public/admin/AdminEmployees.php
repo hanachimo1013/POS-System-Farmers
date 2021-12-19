@@ -179,6 +179,7 @@
     <th style="width:20%;">ID</th>
     <th style="width:20%;">Lastname</th>
     <th style="width:20%;">Firstname</th>
+		<th style="width:20%;">M.I.</th>
     <th style="width:20%;">Phone</th>
     <th style="width:15%;">Address</th>
   </tr></thead>
