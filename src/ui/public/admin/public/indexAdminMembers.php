@@ -106,14 +106,14 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 	// Check connection
 		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
+				die("Connection failed: " . $conn->connect_error);
 			}
+			$data=array();
 			$sql = "SELECT * FROM adminmem where id='". $id ."'";
 			$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
-				$data=array();
-					while($row = $result->fetch_assoc()) {
-					array_push($data,array("id"=>$row["id"] ,"fname"=>$row["fname"] ,"lname"=>$row["lname"], "mini"=>$row["mini"], "numb"=>$row["numb"], "address"=>$row["address"]));
+					if($row = $result->fetch_assoc()) {
+						array_push($data,array("id"=>$row["id"], "fname"=>$row["fname"], "lname"=>$row["lname"], "mini"=>$row["mini"], "numb"=>$row["numb"], "address"=>$row["address"]));
 					}
 					$data_body=array("status"=>"success","data"=>$data);
 					$response->getBody()->write(json_encode($data_body));
@@ -185,25 +185,6 @@ use \Psr\Http\Message\ResponseInterface as Response;
 			$conn->close();
 		return $response;
 		});
-//end of AdminProducts endpoints
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $app->run();
 
 ?>

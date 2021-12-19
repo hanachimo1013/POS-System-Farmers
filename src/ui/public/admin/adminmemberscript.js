@@ -37,24 +37,20 @@ $(document).ready(function(){
 			});
 	});
 
-	 $("#search").click(function(){
-			id=prompt("Search ID");
+	$("#search").click(function(){
+		id=prompt("Search ID");
 			//endpoint
 			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminsearchmember",
-			JSON.stringify(
-					//payload
-					{
-							id:id
-					}
-			),
-			function(data, status){
-					//result
+				JSON.stringify({
+						 id:id
+				}),
+				function(data, status){
 					var json=JSON.parse(data);
-			$("#fname").get(0).value=json.data[0].fname;
-		$("#lname").get(0).value=json.data[0].lname;
-		$("#mini").get(0).value=json.data[0].mini;
-		$("#numb").get(0).value=json.data[0].numb;
-		$("#search").get(0).value=json.data[0].address;
+					$("#fname").get(0).value=json.data[0].fname;
+					$("#lname").get(0).value=json.data[0].lname;
+					$("#mini").get(0).value=json.data[0].mini;
+					$("#numb").get(0).value=json.data[0].numb;
+					$("#address").get(0).value=json.data[0].address;
 					console.log(json);
 			});
 	});

@@ -179,13 +179,12 @@
 <div>
   <div class="container-fluid">
    <h2>Members</h2>
-<input type="text" id="myInput" name="myInput" placeholder="Search for names..">
-<button type="submit" id="search" class="btn btn-success">Search</button>
 <div class="crud">
 	<button type="submit" id="save" class="btn btn-success">Create</button>&nbsp;
 	<button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
 	<button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
 	<button type="submit" id="display" class="btn btn-success">Display</button>
+	<button type="submit" id="search" class="btn btn-success">Search</button>
 </div>
 
 <table id="myTable">
