@@ -24,11 +24,6 @@
       </a>
     </li>
     <li>
-      <a href="AdminCategory.php">
-        <i class="fa fa-server" aria-hidden="true"></i> Category
-      </a>
-    </li>
-    <li>
       <a href="AdminProducts.php">
         <i class="fa fa-shopping-bag" aria-hidden="true"></i> Products
       </a>

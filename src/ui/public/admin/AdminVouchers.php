@@ -186,11 +186,11 @@
     <h5 class="card-title">Voucher Coupon</h5>
     <p class="card-text"><b>20% OFF YOUR PURCHASE</b></p>
     <p class="card-text"><b>35% OFF For Registered Farmers</b></p>
-    <a href="#" id="Genco" class="btn btn-primary">Generate Code</a>
+		<button onClick="window.location.reload();" class="btn btn-primary">GENERATE Voucher Code</button>
     <br><br>
     <center>
     <div class="col-sm-2">
-      <input type="text" class="form-control" value="XXXXX" readonly>
+      <input type="text" class="form-control" value="<?php echo(rand(100000,999999))?>" readonly>
      </div>
    </center>
     <br><br>
@@ -213,6 +213,11 @@
     -->
 
   </div>
+	<script>
+		function myFunction() {
+  	document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
 </div>
 
 </body>
