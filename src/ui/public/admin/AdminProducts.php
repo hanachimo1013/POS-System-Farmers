@@ -181,13 +181,12 @@
 	<div>
   <div class="container-fluid">
      <h2>Products</h2>
-<input type="text" id="myInput" name="search" placeholder="Search for product code..">
-<button type="submit" class="btn btn-success" id="search" >Search</button>
 <div class="crud">
 <button type="submit" class="btn btn-success" id="save">Create</button>
 <button type="submit" class="btn btn-danger" id="delete">Delete</button>
 <button type="submit" class="btn btn-info" id="update" >Update</button>
 <button type="submit" class="btn btn-success" id="display" >Display</button>
+<button type="submit" class="btn btn-success" id="search" >Search</button>
 </div>
 
 <table id="myTable">
@@ -220,7 +219,12 @@
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Category:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="category" name="category" placeholder="Product Category">
+      <select class="custom-select" name="category" id="category">
+				<option value="#">-- SELECT CATEGORY --</option>
+				<option value="Fertilizers">FERTILIZERS</option>
+				<option value="Seeds">SEEDS</option>
+				<option value="Pesticide">PESTICIDE</option>
+			</select>
     </div>
   </div>
   <div class="form-group row">
