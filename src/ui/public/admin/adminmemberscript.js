@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var mini=$("#mini").get(0).value;
 		var numb=$("#numb").get(0).value;
 		var address=$("#address").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/members/adminmemberpostName",
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/adminmemberpostName",
 		JSON.stringify({
 			fname: fname,
 			lname: lname,
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	});
 
 	 $("#display").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/members/adminmemberpostPrint",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminmemberpostPrint",
 			function(data, status){
 					var json=JSON.parse(data);
 					var row="";
@@ -40,12 +40,13 @@ $(document).ready(function(){
 	$("#search").click(function(){
 		id=prompt("Search ID");
 			//endpoint
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/members/adminsearchmember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminsearchmember",
 				JSON.stringify({
 						 id:id
 				}),
 				function(data, status){
 					var json=JSON.parse(data);
+					$("#id").get(0).value=json.data[0].id;
 					$("#fname").get(0).value=json.data[0].fname;
 					$("#lname").get(0).value=json.data[0].lname;
 					$("#mini").get(0).value=json.data[0].mini;
@@ -61,7 +62,7 @@ $("#update").click(function(){
 	var mini=$("#mini").get(0).value;
 	var numb=$("#numb").get(0).value;
 	var address=$("#address").get(0).value;
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/members/adminupdatemember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminupdatemember",
 			JSON.stringify({
 					id: id,
 					fname: fname,
@@ -76,7 +77,7 @@ $("#update").click(function(){
 	});
 
 	$("#delete").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/members/admindeletemember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/admindeletemember",
 			JSON.stringify({
 					id:id
 			}),
