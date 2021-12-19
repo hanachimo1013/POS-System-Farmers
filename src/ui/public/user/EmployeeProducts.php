@@ -110,7 +110,7 @@
 .crud{
 	position: absolute;
   left: 59%;
-  top: 64%;
+  top: 70%;
   width: 35%;
 }
 #myInput {
@@ -187,7 +187,7 @@
 <div class="crud">
 <button type="submit" class="btn btn-success" id="save" style="background-color:;" >Save</button>
 <button type="submit" class="btn btn-success" id="delete" style="background-color:red;" >Delete</button>
-<button type="submit" class="btn btn-success" id="update" style="background-color:grey;" >Update</button>
+<button type="submit" class="btn btn-info" id="update" >Update</button>
 <button type="submit" class="btn btn-success" id="display" style="background-color:;" >Display</button>
 </div>
 
@@ -220,8 +220,13 @@
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label fsize">Category:</label>
-    <div class="col-sm-8">
-      <input type="text" class="form-control" id="category" name="category" placeholder="Product Category">
+		<div class="col-sm-8">
+      <select class="custom-select" name="category" id="category">
+				<option value="#">-- SELECT CATEGORY --</option>
+				<option value="Fertilizers">FERTILIZERS</option>
+				<option value="Seeds">SEEDS</option>
+				<option value="Pesticide">PESTICIDE</option>
+			</select>
     </div>
   </div>
   <div class="form-group row">

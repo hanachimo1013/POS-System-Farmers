@@ -110,7 +110,7 @@
 .crud{
 	position: absolute;
   left: 59%;
-  top: 64%;
+  top: 68%;
   width: 35%;
 }
 #myInput {
