@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>Admin Employees</title>
-	<?php include 'components/head_content.php' ?>
+	<?php include 'components/head_content.php'; ?>
+	<?php require_once 'components/signup_emp.php'; ?>
 </head>
 <style>
 .poslogo{
@@ -185,7 +186,7 @@
 
 </div>
 <div class="divpps">
-  <form>
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">ID:</label>
     <div class="col-sm-10">
@@ -195,51 +196,51 @@
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Firstname:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="Fname" id="fname"placeholder="Fname">
+      <input type="text" class="form-control" name="fname" id="firstname"placeholder="Fname">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Lastname:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control"  name="Lname" id="lname" placeholder="Lname">
+      <input type="text" class="form-control"  name="lname" id="lname" placeholder="Lname">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">M.I:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="Mini" id="mini" placeholder="Middle Initial">
+      <input type="text" class="form-control" name="minit" id="mini" placeholder="Middle Initial">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Address:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="Address" id="address" placeholder="Address">
+      <input type="text" class="form-control" name="address" id="address" placeholder="Address">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Phone:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="Pnum" id="phone_num" placeholder="Number">
+      <input type="text" class="form-control" name="phone_num" id="phone_num" placeholder="Number">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Username:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="Uname" id="username" placeholder="Username">
+      <input type="text" class="form-control" name="username" id="username" placeholder="Username">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword" class="col-sm-2 col-form-label">Password:</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" name="Pword" id="password" placeholder="Password">
+      <input type="password" class="form-control" name="password" id="password" placeholder="Password">
     </div>
+		<span class="lead"><?php echo $password_err; ?></span>
   </div>
+
+	  <div class="form-inline">
+	    <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
+	  </div>
 </form>
-  <div class="form-inline">
-    <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
-    <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
-		<button type="submit" id="search" class="btn btn-success">Search</button>
-  </div>
 </div>
   </div>
 </div>
