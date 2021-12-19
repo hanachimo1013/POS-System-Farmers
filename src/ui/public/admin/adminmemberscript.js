@@ -95,8 +95,8 @@ $("#update").click(function(){
 						 row=row+"<tr><td>"+json.data[i].id+
 		 "</td><td>"+json.data[i].fname+
 		 "</td><td>"+json.data[i].lname+
-		 "</td><td>"+json.data[i].mini+
-		 "</td><td>"+json.data[i].numb+
+		 "</td><td>"+json.data[i].minit+
+		 "</td><td>"+json.data[i].phone_num+
 		 "</td><td>"+json.data[i].address+
 		 "</td></tr>";
 				 }
