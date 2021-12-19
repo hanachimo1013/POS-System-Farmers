@@ -205,9 +205,9 @@
 <div class="divpps">
   <form>
   <div class="form-group row">
-    <label for="staticEmail" class="col-sm-2 col-form-label fsize">Product Code:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Product Code:</label>
     <div class="col-sm-8">
-      <input type="text" class="form-control" id="product" name="product" placeholder="Product Code Auto Generated" readonly>
+      <input type="text" class="form-control" id="product" name="product" placeholder="Product Code Auto Generated" readonly >
     </div>
   </div>
   <div class="form-group row">

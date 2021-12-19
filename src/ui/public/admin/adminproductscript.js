@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var category=$("#category").get(0).value;
 		var unit=$("#unit").get(0).value;
 		var reorder=$("#reorder").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/products/adminproductpostName",
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/adminproductpostName",
 		JSON.stringify({
 			name: name,
 			category: category,
@@ -18,7 +18,7 @@ $(document).ready(function(){
 	});
 
 	 $("#display").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/products/adminproductpostPrint",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminproductpostPrint",
 			function(data, status){
 					var json=JSON.parse(data);
 					var row="";
@@ -37,7 +37,7 @@ $(document).ready(function(){
 	 $("#search").click(function(){
 			product=prompt("code");
 			//endpoint
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/products/adminsearchproduct",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminsearchproduct",
 			JSON.stringify(
 					//payload
 					{
@@ -47,6 +47,7 @@ $(document).ready(function(){
 			function(data, status){
 					//result
 					var json=JSON.parse(data);
+			$("#product").get(0).value=json.data[0].product;
 			$("#name").get(0).value=json.data[0].name;
 		$("#category").get(0).value=json.data[0].category;
 		$("#unit").get(0).value=json.data[0].unit;
@@ -60,7 +61,7 @@ $("#update").click(function(){
 	var category=$("#category").get(0).value;
 	var unit=$("#unit").get(0).value;
 	var reorder=$("#reorder").get(0).value;
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/products/adminupdateproduct",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminupdateproduct",
 			JSON.stringify({
 					product: product,
 					name: name,
@@ -74,7 +75,7 @@ $("#update").click(function(){
 	});
 
 	$("#delete").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/products/admindeleteproduct",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/admindeleteproduct",
 			JSON.stringify({
 					product:product
 			}),
