@@ -363,6 +363,38 @@ $id =$data->id;
 	return $response;
 	});
 
+	$app->post('/adminEmpPostPrint', function (Request $request, Response $response, array $args) {
+
+	//Database
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "pos";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+
+	// Check connection
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+		}
+		$sql = "SELECT * FROM employ_acct";
+		$result = $conn->query($sql);
+	if ($result->num_rows > 0) {
+		$data=array();
+			while($row = $result->fetch_assoc()) {
+			array_push($data,array("id"=>$row["id"] ,"fname"=>$row["fname"] ,"lname"=>$row["lname"],"minit"=>$row["minit"], "phone_num"=>$row["phone_num"], "address"=>$row["address"]));
+			}
+
+		$data_body=array("status"=>"success","data"=>$data);
+		$response->getBody()->write(json_encode($data_body));
+	} else {
+		$response->getBody()->write(array("status"=>"success","data"=>null));
+	}
+	$conn->close();
+
+	return $response;
+	});
 $app->run();
 
 ?>

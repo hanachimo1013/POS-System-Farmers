@@ -4,6 +4,7 @@
 	<title>Admin Employees</title>
 	<?php include 'components/head_content.php'; ?>
 	<?php require_once 'components/signup_emp.php'; ?>
+	<script type="text/javascript" src="adminmemberscript.js"></script>
 </head>
 <style>
 .poslogo{
@@ -174,14 +175,14 @@
   <div class="container-fluid">
    <h2>Employees</h2>
 <table id="myTable">
-  <tr class="header">
+  <thead><tr class="header">
     <th style="width:20%;">ID</th>
     <th style="width:20%;">Lastname</th>
     <th style="width:20%;">Firstname</th>
     <th style="width:20%;">Phone</th>
     <th style="width:15%;">Address</th>
-  </tr>
-	<tbody id="data">
+  </tr></thead>
+	<tbody id="emp_data">
 	</tbody>
 
 </div>
@@ -239,8 +240,10 @@
 
 	  <div class="form-inline">
 	    <button type="submit" id="create" class="btn btn-success">Create</button>&nbsp;
+
 	  </div>
-</form>
+</form></br>
+<button type="submit" id="disp_emp" class="btn btn-primary">DISPLAY</button>&nbsp;
 </div>
   </div>
 </div>
