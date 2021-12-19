@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var category=$("#category").get(0).value;
 		var unit=$("#unit").get(0).value;
 		var reorder=$("#reorder").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/adminproductpostName",
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/products/adminproductpostName",
 		JSON.stringify({
 			name: name,
 			category: category,
@@ -18,7 +18,7 @@ $(document).ready(function(){
 	});
 
 	 $("#display").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminproductpostPrint",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/products/adminproductpostPrint",
 			function(data, status){
 					var json=JSON.parse(data);
 					var row="";
@@ -37,7 +37,7 @@ $(document).ready(function(){
 	 $("#search").click(function(){
 			product=prompt("code");
 			//endpoint
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminsearchproduct",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/products/adminsearchproduct",
 			JSON.stringify(
 					//payload
 					{
@@ -60,7 +60,7 @@ $("#update").click(function(){
 	var category=$("#category").get(0).value;
 	var unit=$("#unit").get(0).value;
 	var reorder=$("#reorder").get(0).value;
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminupdateproduct",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/products/adminupdateproduct",
 			JSON.stringify({
 					product: product,
 					name: name,
@@ -74,7 +74,7 @@ $("#update").click(function(){
 	});
 
 	$("#delete").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/admindeleteproduct",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/products/admindeleteproduct",
 			JSON.stringify({
 					product:product
 			}),
