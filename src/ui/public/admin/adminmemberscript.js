@@ -85,4 +85,22 @@ $("#update").click(function(){
 					alert("Data: " + data + "\nStatus: " + status);
 			});
 	});
+
+	$("#disp_emp").click(function(){
+		 $.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminEmpPostPrint",
+		 function(data, status){
+				 var json=JSON.parse(data);
+				 var row="";
+				 for(var i=0;i<json.data.length;i++){
+						 row=row+"<tr><td>"+json.data[i].id+
+		 "</td><td>"+json.data[i].fname+
+		 "</td><td>"+json.data[i].lname+
+		 "</td><td>"+json.data[i].minit+
+		 "</td><td>"+json.data[i].phone_num+
+		 "</td><td>"+json.data[i].address+
+		 "</td></tr>";
+				 }
+				 $("#emp_data").get(0).innerHTML=row;
+		 });
+ });
 });
