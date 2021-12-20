@@ -9,6 +9,7 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="adminstockscript.js"></script>
 </head>
 <style>
 .poslogo{
@@ -189,6 +190,12 @@ tr:nth-child(even) {
   position: relative;
   top: 50px;
 }
+.crud{
+	position: absolute;
+  left: 65%;
+  top: 40%;
+  width: 35%;
+}
 </style>
 <body>
 	<!--nav main-->
@@ -221,28 +228,26 @@ tr:nth-child(even) {
    <h2>Stocks</h2>
       <form>
         <div class="form-group row">
-          &nbsp;<label for="colFormLabel" class=" col-form-label">Search:</label>
-          <div class="col-sm-4">
-            <input type="text"id="myInput" name="myInput" class="form-control" id="colFormLabel" placeholder="">
-          </div>
-          <button type="submit" id="search" class="btn btn-success">Search</button>&nbsp; &nbsp;
-          &nbsp; &nbsp;
-          <label for="colFormLabel" id="Pcode" name="Pcode" class="col-sm-1 col-form-label">P.code:</label>
+          <label for="colFormLabel" id="pcode" name="Pcode" class="col-sm-1 col-form-label">P.code:</label>
           <div class="col-sm-2">
+            <input type="text" class="form-control" placeholder="">
+          </div>&nbsp;&nbsp;&nbsp;
+					<label for="colFormLabel" id="name" name="date" class="col-sm-1 col-form-label">Name:</label>
+          <div class="col-sm-4">
             <input type="text" class="form-control" placeholder="">
           </div>
           <label for="colFormLabel" id="date" name="date" class="col-sm-1 col-form-label">Date:</label>
           <div class="col-sm-2">
-            <input type="text" class="form-control" placeholder="">
+            <input type="date" class="form-control" placeholder="">
           </div>
         </div>
         <div class="form-group row">
-           &nbsp;<label for="colFormLabel" id="Aquan" name="Aquan" class=" col-form-label">Add Quantity:</label>
+           &nbsp;&nbsp;&nbsp;&nbsp;<label for="colFormLabel" id="addquan" name="Aquan" class=" col-form-label">Add Quantity:</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" id="colFormLabel" placeholder="">
           </div>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <label for="colFormLabel" id="proDes" name="proDes" class="col-sm-2 col-form-label">Product Description:</label>
+          <label for="colFormLabel" id="prodes" name="proDes" class="col-sm-2 col-form-label">Product Description:</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" placeholder="">
           </div>
@@ -253,60 +258,22 @@ tr:nth-child(even) {
   <div class="column">
     <table>
       <tr>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Quantity</th>
-      </tr>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-      </tr>
-      <tr>
-        <td>Adam</td>
-        <td>Johnson</td>
-        <td>67</td>
+        <th style="width:10%;">P.Code</th>
+        <th style="width:10%;">Name</th>
+        <th style="width:10%;">Quantity</th>
+				<th style="width:10%;">Date</th>
+				<th style="width:10%;">Description</th>
       </tr>
     </table>
   </div>
-  <div class="column">
-    <table>
-      <tr>
-        <th>Code</th>
-        <th>Name</th>
-        <th>Quantity</th>
-      </tr>
-      <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-      </tr>
-      <tr>
-        <td>Eve</td>
-        <td>Jackson</td>
-        <td>94</td>
-      </tr>
-      <tr>
-        <td>Adam</td>
-        <td>Johnson</td>
-        <td>67</td>
-      </tr>
-    </table>
-  </div>
-</div>
 
-<div class="form-inline buttp">
-  <br><br><br><br>
+<div class="crud">
   <center>
-    <button type="submit" id="addSto" class="btn btn-success">Add Stock</button>&nbsp;
-    <button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
-    <button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
-    <button type="submit" id="save" class="btn btn-success">Save</button>
+		<button type="submit" id="save" class="btn btn-success">Save</button>
+    <button type="submit" id="update" class="btn btn-info">Update</button>
+    <button type="submit" id="delete" class="btn btn-danger">Delete</button>
+		<button type="submit" id="search" class="btn btn-success">Search</button>
+		<button type="submit" id="display" class="btn btn-success">Display</button>
   </center>
   </div>
     <!-- Main component for a primary marketing message or call to action -->
