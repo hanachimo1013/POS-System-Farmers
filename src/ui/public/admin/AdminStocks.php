@@ -2,14 +2,9 @@
 <html>
 <head>
 	<title>Admin Stocks</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="adminstockscript.js"></script>
+	<?php include 'components/head_content.php' ?>
 </head>
 <style>
 .poslogo{
@@ -228,11 +223,11 @@ tr:nth-child(even) {
    <h2>Stocks</h2>
       <form>
         <div class="form-group row">
-          <label for="colFormLabel" id="pcode" name="Pcode" class="col-sm-1 col-form-label">P.code:</label>
+          <label for="colFormLabel" id="pcode" name="pcode" class="col-sm-1 col-form-label">P.code:</label>
           <div class="col-sm-2">
             <input type="text" class="form-control" placeholder="">
           </div>&nbsp;&nbsp;&nbsp;
-					<label for="colFormLabel" id="name" name="date" class="col-sm-1 col-form-label">Name:</label>
+					<label for="colFormLabel" id="name" name="name" class="col-sm-1 col-form-label">Name:</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" placeholder="">
           </div>
@@ -244,28 +239,27 @@ tr:nth-child(even) {
         <div class="form-group row">
            &nbsp;&nbsp;&nbsp;&nbsp;<label for="colFormLabel" id="addquan" name="Aquan" class=" col-form-label">Add Quantity:</label>
           <div class="col-sm-4">
-            <input type="text" class="form-control" id="colFormLabel" placeholder="">
+            <input type="text" class="form-control" id="addquan" placeholder="">
           </div>
           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <label for="colFormLabel" id="prodes" name="proDes" class="col-sm-2 col-form-label">Product Description:</label>
+          <label for="colFormLabel" id="prodes" name="prodes" class="col-sm-2 col-form-label">Product Description:</label>
           <div class="col-sm-4">
             <input type="text" class="form-control" placeholder="">
           </div>
         </div>
     </form>
 
-    <div class="row">
-  <div class="column">
-    <table>
-      <tr>
+<table id="myTable">
+      <thead><tr class="header">
         <th style="width:10%;">P.Code</th>
         <th style="width:10%;">Name</th>
         <th style="width:10%;">Quantity</th>
 				<th style="width:10%;">Date</th>
 				<th style="width:10%;">Description</th>
-      </tr>
-    </table>
-  </div>
+      </tr></thead>
+			<tbody id="data">
+		</tbody>
+  </table>
 
 <div class="crud">
   <center>
@@ -275,19 +269,6 @@ tr:nth-child(even) {
 		<button type="submit" id="search" class="btn btn-success">Search</button>
 		<button type="submit" id="display" class="btn btn-success">Display</button>
   </center>
-  </div>
-    <!-- Main component for a primary marketing message or call to action -->
-    <!--trial
-    <div class="jumbotron">
-      <h1>Navbar example</h1>
-      <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-      <p>To see the difference between static and fixed top navbars, just scroll.</p>
-      <p>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-      </p>
-    </div>
-    -->
-
   </div>
 </div>
 
