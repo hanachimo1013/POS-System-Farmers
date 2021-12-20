@@ -3,7 +3,7 @@
   	<center>
   		<i class="fa fa-user-circle fa-4x" aria-hidden="true"></i>
   		<br>
-  		    Admin
+  		    <?php echo $_SESSION["user_info"]; ?>
   	</center>
   </div>
 	<ul class="sidebar-navigation">

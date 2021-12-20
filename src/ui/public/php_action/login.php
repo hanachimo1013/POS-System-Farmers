@@ -4,27 +4,26 @@
 
   if(isset($_POST['login'])){
     $acct = $_POST['acctType'];
-		$idNum = $_POST['idNum'];
+		$username = $_POST['username'];
 		$password = $_POST['password'];
 
-		//Voter Condition
-		if($acct == "voter"){
-			$sql = "SELECT * FROM voters WHERE voters_id = '$idNum'";
+		//Employee Condition
+		if($acct == "employee"){
+			$sql = "SELECT * FROM employ_acct WHERE username = '$username'";
 			$query = $conn->query($sql);
 
 			if($query->num_rows < 1){
-				$_SESSION['error'] = 'ERROR: Cannot find Voter Account with the ID';
+				$_SESSION['error'] = 'ERROR: Cannot find Employee Account with the Username!';
 			}
 			else{
 				$row = $query->fetch_assoc();
 				if(password_verify($password, $row['password'])){
 					session_start();
-					$_SESSION["loggedin_voter"] = true;
-					$_SESSION["voter"] = $row['id'];
-					$_SESSION["id"] = $row["voters_id"];
-					$_SESSION["fullname"] = $row["firstname"] . " " . $row["lastname"];
+					$_SESSION["loggedin_employee"] = true;
+					$_SESSION["fullname"] = $row["fname"] . " " . $row["lname"];
+					$_SESSION["status"] = "Admin";
 
-					header('location: ../../../../VotingProject3B/index.php');
+					header('location: ../../../../POS-System-Farmers/src/ui/public/user/EmployeeHomeDash.php');
 				}
 				else{
 					$_SESSION['error'] = 'ERROR: Incorrect password';
@@ -34,28 +33,24 @@
 
 		//Admin Condition
     else if($acct == "admin"){
-			$query = $conn->query("SELECT * FROM admin WHERE username = '$idNum'");
+			$query = $conn->query("SELECT * FROM admin_acct WHERE username = '$username'");
+			$query2 = $conn->query($sql2);
 
 			if($query->num_rows < 1){
 				$_SESSION['error'] = 'ERROR: Cannot find Admin Account with the ID';
 			}
 			else{
-				$sql2 = "SELECT * from voters";
-				$query2 = $conn->query($sql2);
-				$row_count_value = mysqli_num_rows($query2);
+				$sql2 = "SELECT * from admin_acct";
 
 				$row = $query->fetch_assoc();
-				if(password_verify($password, $row['password'])){
+				if($password == $row['password']){
 					session_start();
 
 					$_SESSION["loggedin_admin"] = true;
-					$_SESSION['admin'] = $row['id'];
 					$_SESSION['username'] = $row['username'];
-					$_SESSION['user_info'] = $row['firstname'] . " ".  $row['lastname'];
-					$_SESSION['rank'] = $row['position'] . " | " . $row['department'];
-					$_SESSION['voters_acct'] = $row_count_value;
+					$_SESSION['user_info'] = $row['fname'] . " ".  $row['lname'];
 
-					header("location: ../../../../VotingProject3B/adminUtility/home.php");
+					header("location: ../admin/AdminHomeDash.php");
 				}
 				else{
 					$_SESSION['error'] = 'ERROR: Incorrect password';
@@ -67,7 +62,7 @@
 		}
   }
 
-	header("location: ../../../../VotingProject3B/login.php");
+	header("location: ../login.php");
 	exit;
 	$conn->close();
   ?>

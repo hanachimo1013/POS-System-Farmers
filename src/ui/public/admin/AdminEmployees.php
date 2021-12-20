@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Admin Employees</title>
+	<?php include 'components/session.php' ?>
 	<?php include 'components/head_content.php'; ?>
 	<?php require_once 'components/signup_emp.php'; ?>
 	<script type="text/javascript" src="adminmemberscript.js"></script>

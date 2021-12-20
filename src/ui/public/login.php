@@ -1,3 +1,4 @@
+<?php include 'php_action/session.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +46,7 @@
 	<div>
   		<div class="line"></div>
    	</div>
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="../../../../POS-System-Farmers/src/ui/public/php_action/login.php" method="POST">
     <br>
         <div class="form-group">
         	<div class="input-group">
@@ -54,7 +55,7 @@
                         <span class="fa fa-user"></span>
                     </span>
                 </div>
-                <input type="text" class="form-control" id="uname" name="uname" placeholder="Username" required="required">
+                <input type="text" class="form-control" name="username" placeholder="Username" required>
             </div>
         </div>
 		<div class="form-group">
@@ -64,21 +65,30 @@
                         <i class="fa fa-lock"></i>
                     </span>
                 </div>
-                <input type="password" class="form-control" id="pword" name="pword" placeholder="Password" required="required">
+                <input type="password" class="form-control" name="password" placeholder="Password" required>
             </div>
         </div>
+				<span class="callout">
+					<?php
+						if(isset($_SESSION['error'])){
+							echo "<p>".$_SESSION['error']."</p>";
+							unset($_SESSION['error']);
+						}
+					?>
+				</span>
+
         <div class="bottom-action clearfix">
             <label class="float-left">
             	 <select class="browser-default" name="acctType" id="acctType">
                   <option value="admin">ADMIN</option>
-                  <option value="user">USER</option>
+                  <option value="employee">EMPLOYEE</option>
                 </select>
             </label>
-            <div class="logposs">
-            	<button type="submit" id="login" class="btn btn-primary btn-sm float-right">Log in</button>
-        	</div>
+            	<button type="submit" name="login" id="login" class="btn btn-primary btn-sm float-right">LOGIN</button>
         </div>
     </form>
+
+		<a href="php_action/logout.php">log-out</a>
 </div>
 </body>
 </html>

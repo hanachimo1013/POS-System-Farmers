@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Admin Products</title>
+	<?php include 'components/session.php' ?>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript" src="adminproductscript.js"></script>
 	<?php include 'components/head_content.php' ?>

@@ -1,6 +1,6 @@
   <?php
   // Include config file
-  require_once "components/php_configs.php";
+  include "components/php_configs.php";
 
   // Define variables and initialize with empty values
   $username = $password = $fname = $lname = $minit = $address = $phone_num = "";
@@ -66,21 +66,16 @@
           $sql = "INSERT INTO employ_acct (username, password, fname, minit, lname, address, phone_num) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
           if($stmt = $mysqli->prepare($sql)){
-              // Bind variables to the prepared statement as parameters
+            $param_username = $username;
+            $param_password = $password; // Creates a password hash
+            $param_fname = $fname;
+            $param_minit = $minit;
+            $param_lname = $lname;
+            $param_address = $address;
+            $param_phone_num = $phone_num;
               $stmt->bind_param("sssssss", $param_username, $param_password, $param_fname, $param_minit, $param_lname, $param_address, $param_phone_num);
 
-              // Set parameters
-              $param_username = $username;
-              $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-              $param_fname = $fname;
-              $param_minit = $minit;
-              $param_lname = $lname;
-              $param_address = $address;
-              $param_phone_num = $phone_num;
-
-              // Attempt to execute the prepared statement
               if($stmt->execute()){
-                  // Redirect to login page
                   header("location: AdminEmployees.php");
               } else{
                   echo "Something went wrong. Please try again later.";

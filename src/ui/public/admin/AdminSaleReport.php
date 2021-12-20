@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Admin Reports</title>
+	<?php include 'components/session.php' ?>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
