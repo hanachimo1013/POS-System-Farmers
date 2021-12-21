@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Admin Category</title>
-	<?php include 'components/session.php' ?>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
