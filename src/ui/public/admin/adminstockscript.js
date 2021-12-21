@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var date=$("#date").get(0).value;
 		var addquan=$("#addquan").get(0).value;
 		var prodes=$("#prodes").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/adminstockpostName",
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public2/adminstockpostName",
 		JSON.stringify({
 			name: name,
 			date: date,
@@ -18,7 +18,7 @@ $(document).ready(function(){
 	});
 
 	 $("#display").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminstockpostPrint",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public2/adminstockpostPrint",
 			function(data, status){
 					var json=JSON.parse(data);
 					var row="";
@@ -37,7 +37,7 @@ $(document).ready(function(){
 	 $("#search").click(function(){
 			pcode=prompt("code");
 			//endpoint
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminsearchstock",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public2/adminsearchstock",
 			JSON.stringify(
 					//payload
 					{
@@ -60,7 +60,7 @@ $("#update").click(function(){
 	var date=$("#date").get(0).value;
 	var addquan=$("#addquan").get(0).value;
 	var prodes=$("#prodes").get(0).value;
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminupdatestock",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public2/adminupdatestock",
 			JSON.stringify({
 					pcode: pcode,
 					name: name,
@@ -74,7 +74,7 @@ $("#update").click(function(){
 	});
 
 	$("#delete").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/admindeletestock",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public2/admindeletestock",
 			JSON.stringify({
 					pcode:pcode
 			}),
