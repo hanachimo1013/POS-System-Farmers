@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Admin Members</title>
+	<title>Admin Vouchers</title>
 	<?php include 'components/session.php' ?>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="adminmemberscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -106,19 +104,14 @@
 	height: 200px;
 }
 .card-text{
-	color: white;
+	color:;
 }
-.crud{
-	position: absolute;
-  left: 59%;
-  top: 68%;
-  width: 35%;
-}
+
 #myInput {
   background-image: url('css/searchicon.png');
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  width: 40%;
+  width: 50%;
   font-size: 12px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
@@ -146,12 +139,16 @@
 }
 .divpps{
   position: absolute;
-  left: 59%;
+  left: 60%;
   top: 20%;
-  width: 35%;
+  width: 38%;
 }
 .fsize{
   font-size: 13px;
+}
+.buttp{
+  position: relative;
+  top: 50px;
 }
 </style>
 <body>
@@ -178,74 +175,39 @@
 </nav>
 	<!--nav main end-->
 <?php include 'components/sidemenu.php' ?>
-
 <div class="content-container">
 <div>
   <div class="container-fluid">
-   <h2>Members</h2>
-<div class="crud">
-	<button type="submit" id="save" class="btn btn-success">Create</button>&nbsp;
-	<button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
-	<button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
-	<button type="submit" id="display" class="btn btn-success">Display</button>
-	<button type="submit" id="search" class="btn btn-success">Search</button>
-</div>
-
-<table id="myTable">
-  <thead><tr class="header">
-    <td style="width:10%;">ID</td>
-    <td style="width:20%;">Lastname</td>
-    <td style="width:20%;">Firstname</td>
-		<td style="width:15%;">Middle Initial</td>
-    <td style="width:20%;">Phone</td>
-    <td style="width:20%;">Address</td>
-  </tr></thead>
-	<tbody id="data">
-</tbody>
-</table>
-</div>
-
-<div class="divpps">
-  <form>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">ID:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="id"  readonly >
-    </div>
+   <h2>Vouchers</h2>
+   <div class="card text-center">
+  <div class="card-header">
+    Featured
   </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Firstname:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="fname" placeholder="Fname">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Lastname:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="lname" placeholder="Lname">
-    </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">M.I:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="mini" placeholder="Middle Initial">
-    </div>
-  </div>
-	<div class="form-group row">
-		<label for="inputPassword" class="col-sm-2 col-form-label fsize">Phone:</label>
-		<div class="col-sm-10">
-			<input type="text" class="form-control" id="numb" placeholder="Number">
-		</div>
-	</div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Address:</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="address" placeholder="Address">
-    </div>
+	<form  method="POST" action="#">
+  <div class="card-body">
+    <h5 class="card-title">Voucher Coupon</h5>
+    <p class="card-text"><b>20% OFF YOUR PURCHASE</b></p>
+    <p class="card-text"><b>35% OFF For Registered Farmers</b></p>
+    <br><br>
+    <center>
+    <div class="col-sm-2">
+      <input type="text" id="voucher" class="form-control" value="<?php echo(rand(100000,999999))?>" readonly>
+     </div>
+   </center>
+    <br><br>
+    <a href="#" id="print" class="btn btn-primary">Print</a>
   </div>
 </form>
+  <div class="card-footer text-muted">
+    © Alright Reserved
+  </div>
 </div>
   </div>
+	<script>
+		function myFunction() {
+  	document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
 </div>
 
 </body>

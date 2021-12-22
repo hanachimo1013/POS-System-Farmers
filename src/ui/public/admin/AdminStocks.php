@@ -108,12 +108,17 @@
 .card-text{
 	color: white;
 }
-
+.crud{
+	position: absolute;
+  left: 59%;
+  top: 68%;
+  width: 35%;
+}
 #myInput {
   background-image: url('css/searchicon.png');
   background-position: 10px 10px;
   background-repeat: no-repeat;
-  width: 50%;
+  width: 40%;
   font-size: 12px;
   padding: 12px 20px 12px 40px;
   border: 1px solid #ddd;
@@ -141,137 +146,100 @@
 }
 .divpps{
   position: absolute;
-  left: 60%;
+  left: 59%;
   top: 20%;
-  width: 38%;
+  width: 35%;
 }
 .fsize{
   font-size: 13px;
 }
-
-.row {
-  margin-left:-5px;
-  margin-right:-5px;
-}
-
-.column {
-  float: left;
-  width: 50%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
-
-th, td {
-  text-align: left;
-  padding: 16px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-.buttp{
-  position: relative;
-  top: 50px;
-}
-.crud{
-	position: absolute;
-  left: 65%;
-  top: 40%;
-  width: 35%;
-}
 </style>
 <body>
 	<!--nav main-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#"><img class="poslogo" src="img/POSlogo.png"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+	  <a class="navbar-brand" href="#"><img class="poslogo" src="img/POSlogo.png"></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Farmers Gate <span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-success my-2 my-sm-0" type="submit">
-      <i class="fa fa-sign-out" aria-hidden="true"></i>
-      Log out</button>
-    </form>
-  </div>
-  <!---->
-</nav>
-	<!--nav main end-->
-<?php include 'components/sidemenu.php' ?>
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Farmers Gate <span class="sr-only">(current)</span></a>
+	      </li>
+	    </ul>
+	    <form class="form-inline my-2 my-lg-0">
+	      <button class="btn btn-success my-2 my-sm-0" type="submit">
+	      <i class="fa fa-sign-out" aria-hidden="true"></i>
+	      Log out</button>
+	    </form>
+	  </div>
+	  <!---->
+	</nav>
+		<!--nav main end-->
+	<?php include 'components/sidemenu.php' ?>
 
-<div class="content-container">
-<div>
-  <div class="container-fluid">
-   <h2>Stocks</h2>
-      <form>
-        <div class="form-group row">
-          <label for="colFormLabel" id="pcode" name="pcode" class="col-sm-1 col-form-label">P.code:</label>
-          <div class="col-sm-2">
-            <input type="text" class="form-control" placeholder="">
-          </div>&nbsp;&nbsp;&nbsp;
-					<label for="colFormLabel" id="name" name="name" class="col-sm-1 col-form-label">Name:</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" placeholder="">
-          </div>
-          <label for="colFormLabel" id="date" name="date" class="col-sm-1 col-form-label">Date:</label>
-          <div class="col-sm-2">
-            <input type="date" class="form-control" placeholder="">
-          </div>
-        </div>
-        <div class="form-group row">
-           &nbsp;&nbsp;&nbsp;&nbsp;<label for="colFormLabel" id="addquan" name="Aquan" class=" col-form-label">Add Quantity:</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" id="addquan" placeholder="">
-          </div>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-          <label for="colFormLabel" id="prodes" name="prodes" class="col-sm-2 col-form-label">Product Description:</label>
-          <div class="col-sm-4">
-            <input type="text" class="form-control" placeholder="">
-          </div>
-        </div>
-    </form>
-
-<table id="myTable">
-      <thead><tr class="header">
-        <th style="width:10%;">P.Code</th>
-        <th style="width:10%;">Name</th>
-        <th style="width:10%;">Quantity</th>
-				<th style="width:10%;">Date</th>
-				<th style="width:10%;">Description</th>
-      </tr></thead>
-			<tbody id="data">
-		</tbody>
-  </table>
-
-<div class="crud">
-  <center>
-		<button type="submit" id="save" class="btn btn-success">Save</button>
-    <button type="submit" id="update" class="btn btn-info">Update</button>
-    <button type="submit" id="delete" class="btn btn-danger">Delete</button>
-		<button type="submit" id="search" class="btn btn-success">Search</button>
+	<div class="content-container">
+	<div>
+	  <div class="container-fluid">
+	   <h2>Stocks</h2>
+	<div class="crud">
+		<button type="submit" id="save" class="btn btn-success">Create</button>&nbsp;
+		<button type="submit" id="update" class="btn btn-info">Update</button>&nbsp;
+		<button type="submit" id="delete" class="btn btn-danger">Delete</button>&nbsp;
 		<button type="submit" id="display" class="btn btn-success">Display</button>
-  </center>
-  </div>
-</div>
+		<button type="submit" id="search" class="btn btn-success">Search</button>
+	</div>
 
-</body>
-</html>
+	<table id="myTable">
+	  <thead><tr class="header">
+	    <td style="width:10%;">P.code</td>
+	    <td style="width:20%;">Lastname</td>
+	    <td style="width:20%;">Date</td>
+			<td style="width:15%;">Quantitty</td>
+	    <td style="width:20%;">Product Description</td>
+	  </tr></thead>
+		<tbody id="data">
+	</tbody>
+	</table>
+	</div>
+
+	<div class="divpps">
+	  <form>
+	  <div class="form-group row">
+	    <label for="inputPassword" class="col-sm-2 col-form-label fsize">P.Code:</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="pcode"  readonly >
+	    </div>
+	  </div>
+	  <div class="form-group row">
+	    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Lastname:</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="name" placeholder="LastName">
+	    </div>
+	  </div>
+	  <div class="form-group row">
+	    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Date:</label>
+	    <div class="col-sm-10">
+	      <input type="date" class="form-control" id="caldate" placeholder="Date">
+	    </div>
+	  </div>
+	  <div class="form-group row">
+	    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Quantity:</label>
+	    <div class="col-sm-10">
+	      <input type="text" class="form-control" id="addquan" placeholder="Quantitty">
+	    </div>
+	  </div>
+		<div class="form-group row">
+			<label for="inputPassword" class="col-sm-2 col-form-label fsize">Description:&nbsp;</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="prodes" placeholder="Description">
+			</div>
+		</div>
+	</form>
+	</div>
+	  </div>
+	</div>
+
+	</body>
+	</html>

@@ -145,6 +145,9 @@
   top: 20%;
   width: 35%;
 }
+.fsize{
+  font-size: 13px;
+}
 </style>
 <body>
 	<!--nav main-->
@@ -177,57 +180,57 @@
    <h2>Employees</h2>
 <table id="myTable">
   <thead><tr class="header">
-    <th style="width:20%;">ID</th>
-    <th style="width:20%;">Lastname</th>
-    <th style="width:20%;">Firstname</th>
-		<th style="width:20%;">M.I.</th>
-    <th style="width:20%;">Phone</th>
-    <th style="width:15%;">Address</th>
+    <td style="width:20%;">ID</td>
+    <td style="width:20%;">Lastname</td>
+    <td style="width:20%;">Firstname</td>
+		<td style="width:20%;">M.I.</td>
+    <td style="width:20%;">Phone</td>
+    <td style="width:15%;">Address</td>
   </tr></thead>
 	<tbody id="emp_data">
 	</tbody>
-
+</table>
 </div>
 <div class="divpps">
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>" method="POST">
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Firstname:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Firstname:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="fname" id="firstname"placeholder="Fname">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Lastname:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Lastname:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control"  name="lname" id="lname" placeholder="Lname">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">M.I:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">M.I:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="minit" id="mini" placeholder="Middle Initial">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Address:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Address:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="address" id="address" placeholder="Address">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Phone:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Phone:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="phone_num" id="phone_num" placeholder="Number">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Username:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Username:</label>
     <div class="col-sm-10">
       <input type="text" class="form-control" name="username" id="username" placeholder="Username">
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label">Password:</label>
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Password:</label>
     <div class="col-sm-10">
       <input type="password" class="form-control" name="password" id="password" placeholder="Password">
     </div>

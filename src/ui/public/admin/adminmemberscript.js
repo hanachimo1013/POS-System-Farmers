@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var mini=$("#mini").get(0).value;
 		var numb=$("#numb").get(0).value;
 		var address=$("#address").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public/adminmemberpostName",
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/admin/public2/adminmemberpostName",
 		JSON.stringify({
 			fname: fname,
 			lname: lname,
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	});
 
 	 $("#display").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminmemberpostPrint",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public2/adminmemberpostPrint",
 			function(data, status){
 					var json=JSON.parse(data);
 					var row="";
@@ -40,7 +40,7 @@ $(document).ready(function(){
 	$("#search").click(function(){
 		id=prompt("Search ID");
 			//endpoint
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminsearchmember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public2/adminsearchmember",
 				JSON.stringify({
 						 id:id
 				}),
@@ -62,7 +62,7 @@ $("#update").click(function(){
 	var mini=$("#mini").get(0).value;
 	var numb=$("#numb").get(0).value;
 	var address=$("#address").get(0).value;
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminupdatemember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public2/adminupdatemember",
 			JSON.stringify({
 					id: id,
 					fname: fname,
@@ -76,7 +76,7 @@ $("#update").click(function(){
 			});
 	});
 
-	$("#delete").click(function(){
+$("#delete").click(function(){
 			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/admindeletemember",
 			JSON.stringify({
 					id:id
@@ -87,20 +87,20 @@ $("#update").click(function(){
 	});
 
 	$("#disp_emp").click(function(){
-		 $.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public/adminEmpPostPrint",
-		 function(data, status){
-				 var json=JSON.parse(data);
-				 var row="";
-				 for(var i=0;i<json.data.length;i++){
-						 row=row+"<tr><td>"+json.data[i].id+
-		 "</td><td>"+json.data[i].fname+
-		 "</td><td>"+json.data[i].lname+
-		 "</td><td>"+json.data[i].minit+
-		 "</td><td>"+json.data[i].phone_num+
+	   $.post("http://localhost/POS-System-Farmers/src/ui/public/admin/public4/adminEmpPostPrint",
+	   function(data, status){
+	       var json=JSON.parse(data);
+	       var row="";
+	       for(var i=0;i<json.data.length;i++){
+	           row=row+"<tr><td>"+json.data[i].id+
+	   "</td><td>"+json.data[i].fname+
+	   "</td><td>"+json.data[i].lname+
+	   "</td><td>"+json.data[i].minit+
 		 "</td><td>"+json.data[i].address+
-		 "</td></tr>";
-				 }
-				 $("#emp_data").get(0).innerHTML=row;
-		 });
- });
+	   "</td><td>"+json.data[i].phone_num+
+	   "</td></tr>";
+	       }
+	       $("#emp_data").get(0).innerHTML=row;
+	   });
+	 });
 });

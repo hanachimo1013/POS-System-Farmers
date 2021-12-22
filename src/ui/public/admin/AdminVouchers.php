@@ -183,6 +183,7 @@
   <div class="card-header">
     Featured
   </div>
+	<form  method="POST" action="#">
   <div class="card-body">
     <h5 class="card-title">Voucher Coupon</h5>
     <p class="card-text"><b>20% OFF YOUR PURCHASE</b></p>
@@ -191,12 +192,13 @@
     <br><br>
     <center>
     <div class="col-sm-2">
-      <input type="text" class="form-control" value="<?php echo(rand(100000,999999))?>" readonly>
+      <input type="text" id="voucher" class="form-control" value="<?php echo(rand(100000,999999))?>" readonly>
      </div>
    </center>
     <br><br>
     <a href="#" id="print" class="btn btn-primary">Print</a>
   </div>
+</form>
   <div class="card-footer text-muted">
     © Alright Reserved
   </div>
@@ -214,11 +216,6 @@
     -->
 
   </div>
-	<script>
-		function myFunction() {
-  	document.getElementById("demo").innerHTML = "Hello World";
-}
-</script>
 </div>
 
 </body>
