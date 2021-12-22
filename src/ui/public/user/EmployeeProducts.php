@@ -182,13 +182,13 @@
 	<div>
   <div class="container-fluid">
      <h2>Products</h2>
-<input type="text" id="myInput" name="search" placeholder="Search for product code..">
-<button type="submit" class="btn btn-success" id="search" >Search</button>
+
 <div class="crud">
 <button type="submit" class="btn btn-success" id="save" style="background-color:;" >Save</button>
-<button type="submit" class="btn btn-success" id="delete" style="background-color:red;" >Delete</button>
+<button type="submit" class="btn btn-danger	" id="delete" >Delete</button>
 <button type="submit" class="btn btn-info" id="update" >Update</button>
-<button type="submit" class="btn btn-success" id="display" style="background-color:;" >Display</button>
+<button type="submit" class="btn btn-success" id="display" >Display</button>
+<button type="submit" class="btn btn-success" id="search" >Search</button>
 </div>
 
 <table id="myTable">
@@ -198,6 +198,7 @@
 		<td style="width:20%;">Category</td>
 		<td style="width:20%;">Price</td>
 		<td style="width:15%;">Reoderlvl</td>
+		<td style="width:15%;">Quantity</td>
 	</tr></thead>
 	<tbody id="data">
 </tbody>
@@ -241,20 +242,14 @@
       <input type="text" class="form-control" id="reorder" name="reorder" placeholder="Re-order lvl" >
     </div>
   </div>
+	<div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label fsize">Quantity:</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="quantity" name="reorder" placeholder="Quantity" >
+    </div>
+  </div>
 </form>
 </div>
-    <!-- Main component for a primary marketing message or call to action -->
-    <!--trial
-    <div class="jumbotron">
-      <h1>Navbar example</h1>
-      <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-      <p>To see the difference between static and fixed top navbars, just scroll.</p>
-      <p>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-      </p>
-    </div>
-    -->
-
 
   </div>
 </div>

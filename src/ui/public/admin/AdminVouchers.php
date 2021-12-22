@@ -150,6 +150,22 @@
   position: relative;
   top: 50px;
 }
+
+	@media print{
+	  body{
+			visibility: hidden;
+		}
+		#print_voucher, #print_voucher *{
+			visibility: visible;
+		}
+		#generate, #print{
+			visibility: hidden;
+		}
+	}
+	@page{
+		size: 10in 8in;
+		margin-left: -10%;
+	}
 </style>
 <body>
 	<!--nav main-->
@@ -179,44 +195,29 @@
 <div>
   <div class="container-fluid">
    <h2>Vouchers</h2>
-   <div class="card text-center">
+   <div id="print_voucher" class="card text-center">
   <div class="card-header">
     Featured
   </div>
-	<form  method="POST" action="#">
-  <div class="card-body">
+  <div  class="card-body">
     <h5 class="card-title">Voucher Coupon</h5>
     <p class="card-text"><b>20% OFF YOUR PURCHASE</b></p>
     <p class="card-text"><b>35% OFF For Registered Farmers</b></p>
-		<button onClick="window.location.reload();" class="btn btn-primary">GENERATE Voucher Code</button>
+		<button onClick="window.location.reload();" id="generate" class="btn btn-primary">GENERATE Voucher Code</button>
     <br><br>
     <center>
     <div class="col-sm-2">
-      <input type="text" id="voucher" class="form-control" value="<?php echo(rand(100000,999999))?>" readonly>
+      <input style="text-align:center;" type="text" id="voucher" class="form-control" value="<?php echo(rand(100000,999999))?>" readonly>
      </div>
    </center>
     <br><br>
-    <a href="#" id="print" class="btn btn-primary">Print</a>
+    <a id="print" onclick="window.print();" class="btn btn-primary">Print</a>
   </div>
-</form>
   <div class="card-footer text-muted">
     © Alright Reserved
   </div>
 </div>
-    <!-- Main component for a primary marketing message or call to action -->
-    <!--trial
-    <div class="jumbotron">
-      <h1>Navbar example</h1>
-      <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-      <p>To see the difference between static and fixed top navbars, just scroll.</p>
-      <p>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-      </p>
-    </div>
-    -->
-
   </div>
 </div>
-
 </body>
 </html>

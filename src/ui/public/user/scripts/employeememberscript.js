@@ -6,7 +6,7 @@ $(document).ready(function(){
 		var mini=$("#mini").get(0).value;
 		var numb=$("#numb").get(0).value;
 		var address=$("#address").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/user/public/employeememberpostName",
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/user/public1/employeememberpostName",
 		JSON.stringify({
 			fname: fname,
 			lname: lname,
@@ -20,7 +20,7 @@ $(document).ready(function(){
 	});
 
 	 $("#display").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeememberpostPrint",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public1/employeememberpostPrint",
 			function(data, status){
 					var json=JSON.parse(data);
 					var row="";
@@ -40,7 +40,7 @@ $(document).ready(function(){
 	 $("#search").click(function(){
 			id=prompt("Search ID");
 			//endpoint
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/admin/user/employeesearchmember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public1/employeesearchmember",
 			JSON.stringify(
 					//payload
 					{
@@ -65,7 +65,7 @@ $("#update").click(function(){
 	var mini=$("#mini").get(0).value;
 	var numb=$("#numb").get(0).value;
 	var address=$("#address").get(0).value;
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeeupdatemember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public1/employeeupdatemember",
 			JSON.stringify({
 					id: id,
 					fname: fname,
@@ -80,7 +80,7 @@ $("#update").click(function(){
 	});
 
 	$("#delete").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeedeletemember",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public1/employeedeletemember",
 			JSON.stringify({
 					id:id
 			}),

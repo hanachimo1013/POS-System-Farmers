@@ -5,12 +5,14 @@ $(document).ready(function(){
 		var category=$("#category").get(0).value;
 		var unit=$("#unit").get(0).value;
 		var reorder=$("#reorder").get(0).value;
-		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/user/public/employeepostName",
+		var quantity=$("#quantity").get(0).value;
+		$.post("http://www.localhost/POS-System-Farmers/src/ui/public/user/public2/employeeproductpostName",
 		JSON.stringify({
 			name: name,
 			category: category,
 			unit: unit,
-			reorder: reorder
+			reorder: reorder,
+			quantity: quantity
 		}),
 		function(data,status){
 			alert("Data: " + data + "\nStatus: " + status);
@@ -18,7 +20,7 @@ $(document).ready(function(){
 	});
 
 	 $("#display").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeepostPrint",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public2/employeeproductpostPrint",
 			function(data, status){
 					var json=JSON.parse(data);
 					var row="";
@@ -28,6 +30,7 @@ $(document).ready(function(){
 			"</td><td>"+json.data[i].category+
 			"</td><td>"+json.data[i].unit+
 			"</td><td>"+json.data[i].reorder+
+			"</td><td>"+json.data[i].quantity+
 			"</td></tr>";
 					}
 					$("#data").get(0).innerHTML=row;
@@ -37,7 +40,7 @@ $(document).ready(function(){
 	 $("#search").click(function(){
 			product=prompt("code");
 			//endpoint
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeesearchproduct",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public2/employeesearchproduct",
 			JSON.stringify(
 					//payload
 					{
@@ -47,10 +50,12 @@ $(document).ready(function(){
 			function(data, status){
 					//result
 					var json=JSON.parse(data);
+			$("#product").get(0).value=json.data[0].product;
 			$("#name").get(0).value=json.data[0].name;
 		$("#category").get(0).value=json.data[0].category;
 		$("#unit").get(0).value=json.data[0].unit;
 		$("#reorder").get(0).value=json.data[0].reorder;
+		$("#quantity").get(0).value=json.data[0].quantity;
 					console.log(json);
 			});
 	});
@@ -60,13 +65,15 @@ $("#update").click(function(){
 	var category=$("#category").get(0).value;
 	var unit=$("#unit").get(0).value;
 	var reorder=$("#reorder").get(0).value;
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeeupdateproduct",
+	var quantity=$("#quantity").get(0).value;
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public2/employeeupdateproduct",
 			JSON.stringify({
 					product: product,
 					name: name,
 					category: category,
 					unit: unit,
-					reorder: reorder
+					reorder: reorder,
+					quantity: quantity
 			}),
 			function(data, status){
 					alert("Data: " + data + "\nStatus: " + status);
@@ -74,7 +81,7 @@ $("#update").click(function(){
 	});
 
 	$("#delete").click(function(){
-			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public/employeedeleteproduct",
+			$.post("http://localhost/POS-System-Farmers/src/ui/public/user/public2/employeedeleteproduct",
 			JSON.stringify({
 					product:product
 			}),

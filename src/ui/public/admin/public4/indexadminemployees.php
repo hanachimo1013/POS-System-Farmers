@@ -27,7 +27,7 @@ use \Psr\Http\Message\ResponseInterface as Response;
 	if ($result->num_rows > 0) {
 		$data=array();
 			while($row = $result->fetch_assoc()) {
-			array_push($data,array("id"=>$row["id"] ,"fname"=>$row["fname"] ,"lname"=>$row["lname"],"minit"=>$row["minit"], "address"=>$row["address"] "phone_num"=>$row["phone_num"]));
+			array_push($data,array("id"=>$row["id"] ,"fname"=>$row["fname"] ,"lname"=>$row["lname"],"minit"=>$row["minit"], "address"=>$row["address"]	 "phone_num"=>$row["phone_num"]));
 			}
 
 		$data_body=array("status"=>"success","data"=>$data);

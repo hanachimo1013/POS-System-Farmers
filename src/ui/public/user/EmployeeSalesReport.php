@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Employee Sales Report</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="employeereportscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -144,6 +146,21 @@
 .fsize{
   font-size: 13px;
 }
+@media print{
+  body{
+		visibility: hidden;
+	}
+	#print_voucher, #print_voucher *{
+		visibility: visible;
+	}
+	#print{
+		visibility: hidden;
+	}
+}
+@page{
+	size: 15in 9in;
+	margin-left: -10%;
+}
 </style>
 <body>
 	<!--nav main-->
@@ -174,35 +191,37 @@
 
   <div class="container-fluid">
     <h2>Reports</h2>
-      <div class="card text-center">
+      <div id="print_voucher"class="card text-center">
         <div class="card-header">
          Report Logs
         </div>
           <div class="card-body">
+						<div class="card-body">
+							<center>
+							<table id="myTable">
+							 <thead><tr class="header">
+									<td style="width:20%;">Product CODE</td>
+									<td style="width:20%;">Product Name</td>
+									<td style="width:20%;">Category</td>
+									<td style="width:20%;">Price</td>
+									<td style="width:15%;">Reoderlvl</td>
+									<td style="width:15%;">Quantity</td>
+								</tr></thead>
+								<tbody id="data">
+							</tbody>
+							</table>
+							<center>
           </div>
+					</div>
         <div class="card-footer text-muted">
           © Alright Reserved
         </div>
       </div>
   <center>
     <br>
-      <button type="submit" id="print" name="print" class="btn btn-success">Print</button>
+      <button type="submit" onclick="window.print();" id="print" name="print" class="btn btn-success">Print</button>
   </center>
     </div>
-
-    <!-- Main component for a primary marketing message or call to action -->
-    <!--trial
-    <div class="jumbotron">
-      <h1>Navbar example</h1>
-      <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-      <p>To see the difference between static and fixed top navbars, just scroll.</p>
-      <p>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-      </p>
-    </div>
-    -->
-
-
   </div>
 </div>
 

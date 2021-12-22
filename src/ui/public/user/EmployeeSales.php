@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Employee Sales</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/empproductscript.js"></script>
 	<?php include 'components/head_content.php' ?>
 </head>
 <style>
@@ -266,6 +268,11 @@ form.example::after {
   top: 0%;
   left: 400px;
 }
+.crud{
+	position: absolute;
+	top: 20%;
+	left: 60%;
+}
 </style>
 <body>
 	<!--nav main-->
@@ -291,121 +298,31 @@ form.example::after {
 </nav>
 	<!--nav main end-->
 	<?php include 'components/sidemenu.php'?>
-<div class="content-container">
 
-  <div class="container-fluid">
-    <h2>Sales</h2>
+	<div class="content-container">
+		<div>
+	  <div class="container-fluid">
+	     <h2>Sales</h2>
 
-<div>
-  <div class="container-fluid">
-    <div class="container">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-4"><h2>Sales Product <b>Details</b></h2></div>
-                    <div class="col-sm-5">
-                      <div class="col-sm-9">
-                        <select id="select" name="select" class="custom-select">
-                          <option selected>Select Products:</option>
-                          <option value="1">Pataba</option>
-                          <option value="2">Seeds</option>
-                          <option value="3">Tools</option>
-                        </select>
-                        <input type="text" id="quantity" name="quantity" class="form-control col-sm-4 quanpos" placeholder="Quantity">
-                        <button type="submit" id="adquan" class="btn btn-success productadd">Add</button>&nbsp;
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Product ID</th>
-                        <th>Product Name</th>
-                        <th>Price</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>0001</td>
-                        <td>Nestea</td>
-                        <td>100.00</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>0002</td>
-                        <td>Roller Coaster</td>
-                        <td>1000.00</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>0003</td>
-                        <td>Pagod Nako..</td>
-                        <td>700.00</td>
-                        <td>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><p class="total">Total:</p></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-     <center>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Save</button>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Cash</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Amount:</label>
-                    <input type="text" id="amoun" name="amoun" class="form-control" id="recipient-name">
-                  </div>
-                  <div class="form-group">
-                    <label for="message-text" class="col-form-label">Vouchers:</label>
-                    <input type="text" id="vouch" name="vouch" class="form-control" id="recipient-name">
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" id="printrec" name="printrec" class="btn btn-primary">Print Reciept</button>
-              </div>
-            </div>
-          </div>
-        </div>
-     </center>
-    <!-- Main component for a primary marketing message or call to action -->
-    <!--trial
-    <div class="jumbotron">
-      <h1>Navbar example</h1>
-      <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-      <p>To see the difference between static and fixed top navbars, just scroll.</p>
-      <p>
-        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
-      </p>
-    </div>
-    -->
+	<div class="crud">
+	<button type="submit" class="btn btn-success" id="display" >Display</button>
+	</div>
 
+	<table id="myTable">
+	 </thead><tr class="header">
+			<td style="width:20%;">Product CODE</td>
+			<td style="width:20%;">Product Name</td>
+			<td style="width:20%;">Category</td>
+			<td style="width:20%;">Price</td>
+			<td style="width:15%;">Reorder</td>
+			<td style="width:15%;">Quantity</td>
+		</tr></thead>
+		<tbody id="data">
+	</tbody>
+	</table>
 
-  </div>
-</div>
-
-</body>
-</html>
+							</div>
+	 				</div>
+		</div>
+	</body>
+	</html>
