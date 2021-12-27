@@ -24,43 +24,44 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adminstock`
+-- Table structure for table `adminmem`
 --
 
-CREATE TABLE `adminstock` (
-  `pcode` int(20) NOT NULL,
-  `name` varchar(50) DEFAULT NULL,
-  `caldate` date DEFAULT NULL,
-  `addquan` int(20) DEFAULT NULL,
-  `prodes` varchar(50) DEFAULT NULL
+CREATE TABLE `adminmem` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(255) DEFAULT NULL,
+  `lname` varchar(255) DEFAULT NULL,
+  `mini` varchar(255) DEFAULT NULL,
+  `numb` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `adminstock`
+-- Dumping data for table `adminmem`
 --
 
-INSERT INTO `adminstock` (`pcode`, `name`, `caldate`, `addquan`, `prodes`) VALUES
-(15, 'Mollaneda', '2021-12-27', 1, 'Malakas');
+INSERT INTO `adminmem` (`id`, `fname`, `lname`, `mini`, `numb`, `address`) VALUES
+(14, 'Romar', 'Mollaneda', 'A.', '09396123203', 'Cadaclan, SFC, La Union');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `adminstock`
+-- Indexes for table `adminmem`
 --
-ALTER TABLE `adminstock`
-  ADD PRIMARY KEY (`pcode`);
+ALTER TABLE `adminmem`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `adminstock`
+-- AUTO_INCREMENT for table `adminmem`
 --
-ALTER TABLE `adminstock`
-  MODIFY `pcode` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `adminmem`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

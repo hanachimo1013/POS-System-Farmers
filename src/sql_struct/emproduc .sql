@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2021 at 03:58 AM
+-- Generation Time: Dec 27, 2021 at 08:33 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -31,21 +31,24 @@ CREATE TABLE `emproduc` (
   `product` int(255) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `category` varchar(255) DEFAULT NULL,
-  `unit` int(255) DEFAULT NULL,
-  `reorder` varchar(255) DEFAULT NULL
+  `unit` float DEFAULT NULL,
+  `reorder` varchar(255) DEFAULT NULL,
+  `quantity` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `emproduc`
 --
 
-INSERT INTO `emproduc` (`product`, `name`, `category`, `unit`, `reorder`) VALUES
-(24, 'q', 'w', 2, 'e'),
-(25, '1', '3', 2, '4'),
-(26, '1', '2', 3, '4'),
-(27, 'pirgolac', 'baboy', 77, '1'),
-(29, '', '', 12, ''),
-(30, '', '', 0, '');
+INSERT INTO `emproduc` (`product`, `name`, `category`, `unit`, `reorder`, `quantity`) VALUES
+(33, 'Pigrolac', 'Seeds', 123, '2', NULL),
+(34, 'ADOBO', 'Seeds', 1, '2', NULL),
+(35, 'CALDERETA', 'Pesticide', 1, '2', NULL),
+(36, 'SHIVERS', 'Fertilizers', 1, '2', NULL),
+(37, 'SIBUYAS', 'Seeds', 10.5, '1', 0),
+(38, 'MOMO', 'Seeds', 3, '2', 0),
+(39, 'SABON', 'Fertilizers', 3, '2', 0),
+(40, 'MERRY XMAS', 'Pesticide', 9, '8', 7);
 
 --
 -- Indexes for dumped tables
@@ -65,7 +68,7 @@ ALTER TABLE `emproduc`
 -- AUTO_INCREMENT for table `emproduc`
 --
 ALTER TABLE `emproduc`
-  MODIFY `product` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `product` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
